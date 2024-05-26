@@ -1,0 +1,83 @@
+/* Navbar container styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    /* Change this to the desired background color */
+    color: black;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo styling */
+.logo.icon {
+    width: 150px;
+    /* Set the width to 32px */
+    height: 40px;
+}
+
+/* Navbar menu styling */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    /* Center menu items */
+    gap: 30px;
+    color: #495578;
+    font-size: 18px;
+}
+
+.navbar-menu li {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* Navbar right section styling */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Image within the navbar-right section */
+.navbar-right img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Sign in button */
+.navbar-right button {
+    background:transparent;
+    color: #495578;
+    font-size: 16px;
+    border: 1px solid #6a5beb;
+    padding: 10px 30px;
+    border-radius: 45px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navbar-right button:hover{
+    background-color: #f0f1f5;
+}
+
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #6a5beb;
+}
+
+/* Navbar search icon styling */
+.navbar-search-icon.icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-search-icon.icon img {
+    width: 32px;
+    /* Set the width to 32px */
+    height: 32px;
+    /* Set the height to 32px */
+}
