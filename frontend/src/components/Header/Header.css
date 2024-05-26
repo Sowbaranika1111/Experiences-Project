@@ -1,0 +1,29 @@
+.header{
+    height: 30vw;
+    width: 70vw;
+    margin: 30px auto;
+    background: url('/header_img.jpg') no-repeat;
+    background-size: 100% 95%;
+    position:relative;
+}
+.header-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.2vw;
+    max-width: 50%;
+    bottom: 10%;
+    left:6vw;
+    animation: fadeIn 3s;
+}
+
+.header-contents h2{
+    font-weight: 500;
+    color: rgb(237, 10, 52);
+    font-size: max(4.5vw,22px);
+}
+.header-contents p{
+    color: rgb(40, 48, 197);
+    font-size: 1vw;
+}

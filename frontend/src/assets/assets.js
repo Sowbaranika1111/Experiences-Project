@@ -7,3 +7,7 @@ export const assets = {
     boy_happy_img,
     search_icon
 }
+
+export const experiences_list = {
+    
+}
