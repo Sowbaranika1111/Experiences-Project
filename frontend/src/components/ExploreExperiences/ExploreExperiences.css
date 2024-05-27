@@ -1,0 +1,58 @@
+.explore-exp{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left :45px;
+}
+
+.explore-exp h1{
+    color: #6a5beb;
+    font-weight: 500;
+}
+
+.explore-exp-text{
+    max-width: 100%;
+}
+
+.explore-exp-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.explore-exp-list::-webkit-scrollbar{
+    display: none;
+}
+
+.explore-exp-list-item img{
+    height: 85px;
+    width: 7.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.explore-exp-list p{
+    margin-top: 1px;
+    color: #6a5beb;
+    font-size: max(1.4vw,16px);
+    cursor: pointer;
+}
+
+.explore-exp hr{
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.explore-exp-list-item .active{
+    border: 4px solid #6a5beb;
+    padding: 2px;
+    transition: 0.2s;
+}
