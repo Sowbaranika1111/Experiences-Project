@@ -15,7 +15,14 @@ const ExpDisplay = ({category}) => {
           // a component will be returned ,that will take the exp data and it will display it in a card
           // so a component named ExperiencesVideo is created
           // after creating Experiences Video , mount that component here and passed the key,id,name,etc using props
-          return <ExperiencesVideo key={index} id={item._id} name={item.name} profession={item.profession} category={item.category} description={item.description} video={item.video} />
+          return <ExperiencesVideo 
+                  key={index}   
+                  id={item._id} 
+                  name={item.name} 
+                  profession={item.profession} 
+                  category={item.category} 
+                  description={item.description} 
+                  video={item.video} />
         })}
       </div>
     </div>
