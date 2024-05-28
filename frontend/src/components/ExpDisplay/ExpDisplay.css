@@ -1,0 +1,18 @@
+.exp-display{
+    margin-top: 30px;
+    margin-left: 35px;
+}
+.exp-display h2{
+    font-size: max(3vw,24px);
+    font-weight: 500;
+    color: #6a5beb;
+}
+
+.exp-display-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    margin-top: 30px;
+    gap: 20px;
+    row-gap : 20px;
+    column-gap: 10px;
+}

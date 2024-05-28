@@ -1,0 +1,29 @@
+.exp-video{
+    width: 80%;
+    margin: auto;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px #7b99ed;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+}
+
+.exp-video-display{
+    width: 15vw;
+    height: 100px;
+    margin: auto;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.exp-video-info{
+    padding: 20px;
+}
+
+.exp-video-prsn-name{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(151, 88, 228);
+}
+.exp-video-desc{
+    color: #686868;
+    font-size: 12px;
+}

@@ -13,17 +13,15 @@ import exp_8_img from './exp_8_astral_travel_img.jpg'
 import exp_9_img from './exp_9_other_exp_img.png'
 
 
-import mp4_1 from './exp_1_mental_health_img.jpg'
-// import mp4_1 from './mp4_bear_chasing_salmon.mp4'
-// import mp4_2 from './mp4_bird_small.mp4'
-// import mp4_3 from './mp4_butterfly_flower.mp4'
-// import mp4_4 from './mp4_docking_boats.mp4'
-// import mp4_5 from './mp4_forest_fog_clouds.mp4'
-// import mp4_6 from './mp4_forest_trees.mp4'
-// import mp4_7 from './mp4_honey_bee.mp4'
-// import mp4_8 from './mp4_ostrich.mp4'
-// import mp4_9 from './mp4_waterfall.mp4'
-// import mp4_10 from './mp4_waterflow.mp4'
+import img_1 from './exp_1_mental_health_img.jpg'
+// import img_2 from './exp_2_physical_health_img.jpg'
+// import img_3 from './exp_3_manifestations_img.webp'
+// import img_4 from './exp_4_miracles_img.webp'
+// import img_5 from './exp_5_healing_img.png'
+// import img_6 from './exp_6_visions_img.jpg'
+// import img_7 from './exp_7_msgs_received_img.png'
+// import img_8 from './exp_8_astral_travel_img.jpg'
+// import img_9 from './exp_9_other_exp_img.png'
 
 //exported it in objects format , objects name is assets
 export const assets = {
@@ -70,65 +68,77 @@ export const experiences_list = [
     }
 ]
 
-export const videos_list = [
+export const exp_videos_list = [
     {
         _id: "1",
         name: "Person 1",
-        video: mp4_1,
-        category: "Mental Health"
+        profession: "IT employee",
+        video: img_1,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "2",
+        name: "Person 2",
+        profession: "IT employee",
+        video: exp_2_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "3",
+        name: "Person 3",
+        profession: "IT employee",
+        video: exp_3_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "4",
+        name: "Person 4",
+        profession: "IT employee",
+        video: exp_4_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "5",
+        name: "Person 5",
+        profession: "IT employee",
+        video: exp_5_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "6",
+        name: "Person 6",
+        profession: "IT employee",
+        video: exp_6_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "7",
+        name: "Person 7",
+        profession: "IT employee",
+        video: exp_7_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "8",
+        name: "Person 8",
+        profession: "IT employee",
+        video: exp_8_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
+    },
+    {
+        _id: "9",
+        name: "Person 9",
+        profession: "IT employee",
+        video: exp_9_img,
+        category: "Mental Health",
+        description:"Lorem Ipsum experienced"
     }
-    // {
-    //     _id: "2",
-    //     name: "Person 2",
-    //     video: mp4_2,
-    //     category: "Mental Health"
-    // }
-    // {
-    //     _id: "3",
-    //     name: "Person 3",
-    //     video: mp4_3,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "4",
-    //     name: "Person 4",
-    //     video: mp4_4,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "5",
-    //     name: "Person 5",
-    //     video: mp4_5,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "6",
-    //     name: "Person 6",
-    //     video: mp4_6,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "7",
-    //     name: "Person 7",
-    //     video: mp4_7,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "8",
-    //     name: "Person 8",
-    //     video: mp4_8,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "9",
-    //     name: "Person 9",
-    //     video: mp4_9,
-    //     category: "Mental Health"
-    // },
-    // {
-    //     _id: "10",
-    //     name: "Person 10",
-    //     video: mp4_10,
-    //     category: "Mental Health"
-    // }
 ]

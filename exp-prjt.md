@@ -9,8 +9,12 @@
 
 - created to share data ,when they need to be accessible by many components at different nesting levels or the components that are not directly related to each other
 
-- To dislay all the exeriences we create a context API in our prjt (Folder -> context,StoreContext.jsx)
+- To dislay all the experiences we create a context API in our prjt (Folder -> context,StoreContext.jsx)
 
 #### Props
 - props is a spl keyword in React that stands for properties nd is used for passing data from one component to another.
-- 
+  
+  - FoodItem is ExperiencesVideo
+    all the exp displayed are from ExperiencesVideo
+
+  - Cart is AddToFav
