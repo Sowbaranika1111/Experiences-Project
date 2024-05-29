@@ -2,6 +2,8 @@
 import boy_happy_img from './boy_happy_img.png'
 import search_icon from './search_icon.png'
 
+import cross_icon from './cross_icon.png'
+
 import AddYours_video from './AddYours_video.mp4'
 
 import exp_1_img from './exp_1_mental_health_img.jpg'
@@ -39,8 +41,9 @@ export const assets = {
     youtube_footer_icon
 }
 
-export const addYoursVideo = 
-    {AddYours_video}
+export const cross_icon_loginPopup = {cross_icon}
+
+export const addYoursVideo = {AddYours_video}
 
 
 export const experiences_list = [

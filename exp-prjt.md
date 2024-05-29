@@ -18,3 +18,4 @@
     all the exp displayed are from ExperiencesVideo
 
   - Cart is AddToFav
+- create a component and then mount it in the App.jsx file
