@@ -59,7 +59,7 @@
 
 .login-popup-condition{
     display: flex;
-    align-items:;
+    align-items:start;
     gap: 8px;
     margin-top: -15px;
 }
