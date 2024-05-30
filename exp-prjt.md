@@ -18,10 +18,11 @@
   - FoodItem is ExperiencesVideo
     all the exp displayed are from ExperiencesVideo
 
-  - Cart is AddToFav
+  - header image is in assets and public folder
+
 - create a component and then mount it in the App.jsx file
 
-### AddYours popup component creation 
+### AddYours popup component creation
 
 - Create a compo named AddYoursPopup
 - Mount it in the App.jsx compo
