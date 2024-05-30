@@ -136,9 +136,9 @@ const AddYoursPopup = ({ setAddYours }) => {
                         onChange={(e) => setDescription(e.target.value)}
                         required
                     />
-                    <button type="button" onClick={handleVideoRecording}>
+                    {/* <button type="button" onClick={handleVideoRecording}>
                         Record Video
-                    </button>
+                    </button> */}
                 </div>
                 <button type="submit">Submit</button>
             </form>
