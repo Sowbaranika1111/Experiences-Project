@@ -2,12 +2,15 @@ import React from 'react';
 import './ExploreExperiences.css';
 import { experiences_list, addYoursVideo } from '../../assets/assets';
 
-const ExploreExperiences = ({ category, setCategory }) => {
+const ExploreExperiences = ({ category, setCategory , setAddYours}) => {
+  const handleAddYoursVideoClick = () => {
+    setAddYours(true);
+  };
   return (
     <div className='explore-exp' id='explore-exp'>
       <div className="explore-exp-header">
         <h1>Explore The Experiences</h1>
-        <video className='tell-your-tale-video' src={addYoursVideo.AddYours_video} autoPlay loop muted width="300">
+        <video className='tell-your-tale-video' onClick={handleAddYoursVideoClick} src={addYoursVideo.AddYours_video} autoPlay loop muted width="300">
           Your browser does not support the video tag.
         </video>
       </div>

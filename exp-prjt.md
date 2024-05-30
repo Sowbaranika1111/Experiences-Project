@@ -26,7 +26,55 @@
 - Create a compo named AddYoursPopup
 - Mount it in the App.jsx compo
 - To display the popup create a state variable
-- In the return part write code for displaying the popup based on true or false retuned from the AddYoursPopup.jsx compo
-- send the showAddYours in the Home, which is inside return , to convert it to true or false, it is sent as props .. restructure it in the ExploreExperiences.jsx compo 
-- On the video tag add onclick property and setAddYours as true
-- go to AddYoursPopup.jsx
+- In the return part write code for displaying the popup based on true or false     
+  
+```jsx
+
+   {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>} 
+```
+
+- send the showAddYours in the Home, which is inside return , to convert it to true or false, it is sent as props ..
+- Goto Home.jsx here send  {setAddYours} as props and pass {setAddYours} as props to the Explore Experiences inside return
+
+```jsx
+
+return (
+    <div>
+      <Header/>
+      <ExploreExperiences category={category} setCategory={setCategory} setAddYours={setAddYours}/>
+      <ExpDisplay category={category}/>
+    </div>
+  ) 
+```
+
+-  restructure it in the ExploreExperiences.jsx compo 
+- create a func 
+
+```jsx
+const handleAddYoursVideoClick = () => {
+    setAddYours(true);}
+```
+
+- On the video tag add onclick property and add handleAddYoursVideoClick as props
+- go to AddYoursPopup.jsx and develop the UI for the popup
+
+- On **AddYoursPopup** in the onClick property on the close icon pass the setAddYours created in App.jsx
+- On **App.jsx** pass the setAddYours as props
+  
+```jsx
+    {showAddYours?<AddYoursPopup **-> setAddYours={setAddYours} <-** />:<></>}
+```
+
+Passing that as props in **AddYoursPopup** cpmponent
+
+```jsx
+    const AddYoursPopup = ({setAddYours}) => {}
+
+```
+
+- Onclicking the close icon it will become false 
+
+```jsx
+            <img onClick={()=>setAddYours(false)} src={cross_icon_loginPopup.cross_icon} alt="" />
+
+```
