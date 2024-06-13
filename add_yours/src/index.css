@@ -9,13 +9,7 @@
 
 body{
   min-height: 100vh;
-  background-color: #797777;
-}
-
-/* links deco */
-a{
-  text-decoration: none;
-  color: inherit;
+  background-color: #e1dcdc;
 }
 
 hr{
@@ -24,8 +18,3 @@ hr{
   background-color: #fff;
 }
 
-/* App.jsx file's css */
-
-.app-content{
-  
-}
