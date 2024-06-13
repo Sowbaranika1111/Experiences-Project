@@ -85,3 +85,6 @@ Passing that as props in **AddYoursPopup** cpmponent
 - npm install express(server)  |  mongoose(to connect with db)  |  jsonwebtoken(To create authentication system)  |  bcrypt(use the users data and store in the db)  |  cors(to give the connection to our front end to connect with the backend)  |  dotenv(to use the environment variable in the project)  |  body-parser(to parse the data coming through the user) |
 multer(to create an image store system) | stripe(to add the payment gateways) on the webpage  |  validator(to chk password or email id is valid or not)  |  nodemon(when we save our project the server will be restarted)
   
+#### Add yours page dependencies
+
+- npm install axios(to create network req (get,post,..))  |  react-toastify(to create toast notification easily, to display noti. to users)  |  react-router-dom(to create routes)
