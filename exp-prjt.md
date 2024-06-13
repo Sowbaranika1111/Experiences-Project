@@ -79,3 +79,9 @@ Passing that as props in **AddYoursPopup** cpmponent
             <img onClick={()=>setAddYours(false)} src={cross_icon_loginPopup.cross_icon} alt="" />
 
 ```
+
+##### Backend dependencies
+
+- npm install express(server)  |  mongoose(to connect with db)  |  jsonwebtoken(To create authentication system)  |  bcrypt(use the users data and store in the db)  |  cors(to give the connection to our front end to connect with the backend)  |  dotenv(to use the environment variable in the project)  |  body-parser(to parse the data coming through the user) |
+multer(to create an image store system) | stripe(to add the payment gateways) on the webpage  |  validator(to chk password or email id is valid or not)  |  nodemon(when we save our project the server will be restarted)
+  
