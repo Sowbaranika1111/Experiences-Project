@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    height: 100vh; /* Ensure the container takes full viewport height */
+    margin-top: 20px;
 }
 
 .add form {
@@ -27,6 +27,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    position: relative;
+    width: 100%;
 }
 
 .form-section p {
@@ -63,11 +65,23 @@
     gap: 10px;
 }
 
+.form-section textarea {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  }
+
+.words-count{
+    position: absolute;
+    right: 81px;
+    bottom: -200px;
+    color: grey;
+    font-size: small;
+}
 
 .button-container{
     display: flex;
     justify-content: center;
 }
+
 .add-btn{
     padding: 10px;
     margin-left: 90px;
@@ -79,48 +93,3 @@
     cursor: pointer;
 }
 
-/* .add{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-.add form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-    width: 500px; 
-    background-color: #d3b9ed; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-}
-
-.add span{
-    color: rgb(176, 45, 45);
-}
-
-.vdo-upload{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.vdo-upload img{
-    width: 100px;
-    height: 80px;
-    cursor: pointer;
-}
-
-.add-participant-name , .add-participant-prfsn , .add-exp-description {
-    width: max(40%,280px);
-}
-
-.add-participant-name input , .add-participant-prfsn input, .add-exp-description textarea{
-    padding: 5px;
-} */

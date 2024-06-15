@@ -27,7 +27,7 @@
 - Create a compo named AddYoursPopup
 - Mount it in the App.jsx compo
 - To display the popup create a state variable
-- In the return part write code for displaying the popup based on true or false     
+- In the return part write code for displaying the popup based on true or  false.     
   
 ```jsx
 
@@ -80,7 +80,7 @@ Passing that as props in **AddYoursPopup** cpmponent
 
 ```
 
-##### Backend dependencies
+#### Backend dependencies
 
 - npm install express(server)  |  mongoose(to connect with db)  |  jsonwebtoken(To create authentication system)  |  bcrypt(use the users data and store in the db)  |  cors(to give the connection to our front end to connect with the backend)  |  dotenv(to use the environment variable in the project)  |  body-parser(to parse the data coming through the user) |
 multer(to create an image store system) | stripe(to add the payment gateways) on the webpage  |  validator(to chk password or email id is valid or not)  |  nodemon(when we save our project the server will be restarted)
@@ -88,3 +88,14 @@ multer(to create an image store system) | stripe(to add the payment gateways) on
 #### Add yours page dependencies
 
 - npm install axios(to create network req (get,post,..))  |  react-toastify(to create toast notification easily, to display noti. to users)  |  react-router-dom(to create routes)
+
+##### Uploading img in add_yours page , use state variable
+
+add_yours -> src -> AddYoursPg.jsx
+
+- AddYoursPg.jsx
+
+#### Ternary operator
+
+- video?URL.createObjectURL(video):assets.uploadVideo
+  
