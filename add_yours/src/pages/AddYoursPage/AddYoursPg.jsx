@@ -1,19 +1,72 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './AddYoursPg.css';
 import { assets } from '../../assets/assets';
 
 const AddYoursPg = () => {
 
-    // If the video is uploaded 
-    const [video, setVideo] = useState(false)
+    // Video Uploading 
+    const [video, setVideo] = useState(null)
+    const [recording, setRecording] = useState(false)
+    const [stream, setStream] = useState(null)
+    const videoRef = useRef(null)
+    const mediaRecorderRef = useRef(null)
+    const chunksRef = useRef([])
+
+    const handleVideoUpload = (e) => {
+        setVideo(e.target.files[0]);
+    }
+
+    const startRecording = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            setStream(stream);
+            setRecording(true);
+        }
+        catch (error) {
+            console.error('Error accessing media devices: ', error)
+            alert('Error accessing camera and/or microphone.Please ensure permissions are granted.')
+        }
+    };
+
+    useEffect(() => {
+        if (recording && stream) {
+            videoRef.current.srcObject = stream; // Assigning the MediaStream to the video element
+            videoRef.current.style.display = 'block';
+            videoRef.current.play();
+
+            mediaRecorderRef.current = new MediaRecorder(stream);
+            mediaRecorderRef.current.ondataavailable = (event) => {
+                chunksRef.current.push(event.data);
+            };
+
+            mediaRecorderRef.current.onstop = () => {
+                const blob = new Blob(chunksRef.current, { type: 'video/webm' });
+                chunksRef.current = [];
+                setVideo(blob);
+            };
+            mediaRecorderRef.current.start();
+        }
+    }, [recording, stream]);
+
+    const stopRecording = () => {
+        if (mediaRecorderRef.current) {
+            mediaRecorderRef.current.stop()
+        }
+        if (videoRef.current && videoRef.current.srcObject) {
+            const tracks = videoRef.current.srcObject.getTracks();
+            tracks.forEach(track => track.stop());
+        }
+        setRecording(false);
+        setStream(null);
+    };
 
     // Description words' count
-    const [description,setDescriptionLimit] = useState('');
+    const [description, setDescriptionLimit] = useState('');
     const maxwords = 111;
 
     const handleDescriptionLimit = (e) => {
         const words_entered = e.target.value.split(/\s+/);
-        if(words_entered.filter(Boolean).length <= maxwords){
+        if (words_entered.filter(Boolean).length <= maxwords) {
             setDescriptionLimit(e.target.value);
         }
     };
@@ -29,7 +82,7 @@ const AddYoursPg = () => {
                     <div className="vdo-upload">
                         {video ? (
                             <video width="50%" controls>
-                                <source src={URL.createObjectURL(video)} type={video.type} />
+                                <source src={URL.createObjectURL(video)} type={video.type || 'video/webm'} />
                                 Your browser does not support the video tag.
                             </video>
                         ) : (
@@ -38,12 +91,18 @@ const AddYoursPg = () => {
                                     <img src={assets.uploadVideo} alt="Upload Video" />
                                 </label>
                                 <p>or</p>
-                                <label htmlFor="recordVideo">
+                                <button type="button" onClick={startRecording}>
                                     <img src={assets.recordVideo} alt="Record Video" />
-                                </label>
+                                </button>
                             </>
                         )}
-                        <input onChange={(e) => setVideo(e.target.files[0])} type="file" id="uploadVideo" accept="video/*" hidden required />
+                        <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden required />
+                        {recording && (
+                            <div>
+                                <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
+                                <button type='button' onClick={stopRecording}>Stop Recording</button>
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -114,66 +173,3 @@ const AddYoursPg = () => {
 }
 
 export default AddYoursPg;
-
-
-// import React from 'react'
-// import './AddYoursPg.css'
-// import { assets } from '../../assets/assets'
-
-// //flex-col is used in multiple components , so add the css for this cls in index.css
-
-// const AddYoursPg = () => {
-//     return (
-//         <div className='add'>
-//             <form className='flex-col'>
-
-//                 <p>Video<span>*</span></p>
-//                 <div className="vdo-upload ">
-//                     <label htmlFor="video">
-//                         <img src={assets.uploadVideo} alt="" />
-//                     </label>
-//                     <p>or</p>
-//                     <label htmlFor="video">
-//                         <img src={assets.recordVideo} alt="" />
-//                     </label>
-//                     <input type="file" id="video" hidden required />
-//                 </div>
-
-//                 <div className="add-participant-name flex-col">
-//                     <p>Name<span>*</span></p>
-//                     <input type="text" name='name' placeholder='Enter Your Name' />
-//                 </div>
-
-//                 <div className="add-participant-prfsn flex-col">
-//                     <p>Profession<span>*</span></p>
-//                     <input type="text" name='prfsn' placeholder='Enter Your Profession' />
-//                 </div>
-
-//                 <div className="add-category">
-//                     <p>Experience's Category<span>*</span></p>
-//                     <select name="category" >
-//                         <option value="Mental Health">Mental Health</option>
-//                         <option value="Physical Health">Physical Health</option>
-//                         <option value="Manifestations">Manifestations</option>
-//                         <option value="Miracles">Miracles</option>
-//                         <option value="Healing">Healing</option>
-//                         <option value="Visions">Visions</option>
-//                         <option value="Messages received">Messages received</option>
-//                         <option value="Astral Travel">Astral Travel</option>
-//                         <option value="Other Experiences">Other Experiences</option>
-//                     </select>
-//                 </div>
-
-//                 <div className="add-exp-description flex-col">
-//                     <p>Experience's Description<span>*</span></p>
-//                     <textarea name="description" rows="6" placeholder='Few lines about your experience...' required></textarea>
-//                 </div>
-
-//                 <button type='submit' className='add-btn'>ADD</button>
-
-//             </form>
-//         </div>
-//     )
-// }
-
-// export default AddYoursPg
