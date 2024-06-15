@@ -4,6 +4,43 @@ import { assets } from '../../assets/assets';
 
 const AddYoursPg = () => {
 
+    const [data, setData] = useState({
+        name: "",
+        age: "Select",
+        profession: "",
+        country: "",
+        meditating_experience: "",
+        exp_category: "Select",
+        exp_desc: "",
+    })
+    const [description, setDescriptionLimit] = useState('');
+    const maxwords = 111;
+
+    const onChangeHandler = (event) => {
+        const name = event.target.name;
+        const value = event.target.value
+
+        // Description words' count
+        if (name === 'exp_desc') {
+            const words_entered = value.split(/\s+/);
+            if (words_entered.filter(Boolean).length <= maxwords) {
+                setDescriptionLimit(value);
+                setData(data => ({ ...data, [name]: value }))
+            }
+        }
+        else {
+            setData(data => ({ ...data, [name]: value }))
+        }
+    }
+    // Description words' count
+    const word_count = description.split(/\s+/).filter(Boolean).length;
+    const words_remaining = maxwords - word_count;
+
+    // to check if the data is getting updated
+    // useEffect(()=>{
+    //     console.log(data);
+    // },[data]) //give the state name here, whenevr it is updated the above conditions will work [console.log(data)]
+
     // Video Uploading 
     const [video, setVideo] = useState(null)
     const [recording, setRecording] = useState(false)
@@ -60,23 +97,33 @@ const AddYoursPg = () => {
         setStream(null);
     };
 
-    // Description words' count
-    const [description, setDescriptionLimit] = useState('');
-    const maxwords = 111;
+    const [errors, setErrors] = useState({
+        age: false,
+        exp_category: false,
+        video: false
+    });
 
-    const handleDescriptionLimit = (e) => {
-        const words_entered = e.target.value.split(/\s+/);
-        if (words_entered.filter(Boolean).length <= maxwords) {
-            setDescriptionLimit(e.target.value);
+    // to make an API call
+    const onSubmitHandler = async (event) => {
+        event.preventDefault();
+
+        // Validation
+        const newErrors ={
+            age: data.age === 'Select',
+            exp_category: data.exp_category === 'Select',
+            video: !video
         }
-    };
+        setErrors(newErrors);
 
-    const word_count = description.split(/\s+/).filter(Boolean).length;
-    const words_remaining = maxwords - word_count;
+        if(!newErrors.age && !newErrors.exp_category && !newErrors.video){
+            alert("Form submitted")
+            console.log("Form submitted",data);
+        }
+    }
 
     return (
         <div className='add'>
-            <form className='flex-col'>
+            <form className='flex-col' onSubmit={onSubmitHandler}>
                 <div className="form-section vdo-upload-section">
                     <p>Video<span>*</span></p>
                     <div className="vdo-upload">
@@ -96,24 +143,25 @@ const AddYoursPg = () => {
                                 </button>
                             </>
                         )}
-                        <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden required />
+                        <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden />
                         {recording && (
                             <div>
                                 <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
                                 <button type='button' onClick={stopRecording}>Stop Recording</button>
                             </div>
                         )}
+                        {errors.video && <span className=''>Please upload or record a video.</span>}
                     </div>
                 </div>
 
                 <div className="form-section">
                     <p>Name<span>*</span></p>
-                    <input type="text" name='name' placeholder='Enter Your Name' />
+                    <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Enter Your Name' required />
                 </div>
 
-                <div className="form-section">
+                <div className={`form-section ${errors.age ? 'error':''}`}>
                     <p>Age<span>*</span></p>
-                    <select name="age">
+                    <select onChange={onChangeHandler} name="age" required>
                         <option value="Select_age">Select</option>
                         <option value="0_to_10">0-10</option>
                         <option value="11_to_20">11-20</option>
@@ -122,26 +170,27 @@ const AddYoursPg = () => {
                         <option value="51_to_70">51-70</option>
                         <option value="greater_than_70">above 70</option>
                     </select>
+                    {errors.age && <span className='error-message'>Please select an age range.</span>}
                 </div>
 
                 <div className="form-section">
                     <p>Profession<span>*</span></p>
-                    <input type="text" name='prfsn' placeholder='Enter Your Profession' />
+                    <input onChange={onChangeHandler} value={data.profession} type="text" name='profession' placeholder='Enter Your Profession' required />
                 </div>
 
                 <div className="form-section">
                     <p>Country<span>*</span></p>
-                    <input type="text" name='country' placeholder='Enter Your Country Name' />
+                    <input onChange={onChangeHandler} value={data.country} type="text" name='country' placeholder='Enter Your Country Name' required />
                 </div>
 
                 <div className="form-section">
                     <p>Meditating Experience<span>*</span></p>
-                    <input type="text" name="yearsMeditating" placeholder='For how many years you are meditating?' />
+                    <input onChange={onChangeHandler} value={data.meditating_experience} type="text" name="meditating_experience" placeholder='For how many years you are meditating?' required />
                 </div>
 
-                <div className="form-section">
+                <div className={`form-section ${errors.exp_category ? 'error':''}`}>
                     <p>Experience's Category<span>*</span></p>
-                    <select name="category">
+                    <select onChange={onChangeHandler} name="exp_category" required>
                         <option value="Select_category">Select</option>
                         <option value="Mental_Health">Mental Health</option>
                         <option value="Physical_Health">Physical Health</option>
@@ -153,11 +202,12 @@ const AddYoursPg = () => {
                         <option value="Astral_Travel">Astral Travel</option>
                         <option value="Other_Experiences">Other Experiences</option>
                     </select>
+                    {errors.exp_category && <span className='error-message'>Please select a category.</span>}
                 </div>
 
                 <div className="form-section">
                     <p>Experience's Description<span>*</span></p>
-                    <textarea name="description" onChange={handleDescriptionLimit} rows="6" placeholder='Few lines about your experience...' required></textarea>
+                    <textarea onChange={onChangeHandler} value={data.exp_desc} name="exp_desc" rows="6" placeholder='Few lines about your experience...' required></textarea>
                 </div>
                 <div className="words-count">
                     {words_remaining}/{maxwords}
@@ -167,7 +217,6 @@ const AddYoursPg = () => {
                     <button type='submit' className='add-btn'>ADD</button>
                 </div>
             </form>
-
         </div>
     )
 }
