@@ -108,58 +108,40 @@ const AddYoursPg = () => {
         event.preventDefault();
 
         // Validation
-        const newErrors ={
+        const newErrors = {
             age: data.age === 'Select',
             exp_category: data.exp_category === 'Select',
             video: !video
         }
         setErrors(newErrors);
 
-        if(!newErrors.age && !newErrors.exp_category && !newErrors.video){
+        if (!newErrors.age && !newErrors.exp_category && !newErrors.video) {
             alert("Form submitted")
-            console.log("Form submitted",data);
+            console.log("Form submitted", data);
         }
+
+        //Inserting all the form data in a form data
+        const formData = new FormData();
+        formData.append("name", data.name)
+        formData.append("video", video)
+        formData.append("age", data.age)
+        formData.append("profession", data.profession)
+        formData.append("country", data.country)
+        formData.append("meditating_experience", data.meditating_experience)
+        formData.append("exp_category", data.exp_category)
+        formData.append("exp_desc", data.exp_desc)
     }
 
     return (
         <div className='add'>
             <form className='flex-col' onSubmit={onSubmitHandler}>
-                <div className="form-section vdo-upload-section">
-                    <p>Video<span>*</span></p>
-                    <div className="vdo-upload">
-                        {video ? (
-                            <video width="50%" controls>
-                                <source src={URL.createObjectURL(video)} type={video.type || 'video/webm'} />
-                                Your browser does not support the video tag.
-                            </video>
-                        ) : (
-                            <>
-                                <label htmlFor="uploadVideo">
-                                    <img src={assets.uploadVideo} alt="Upload Video" />
-                                </label>
-                                <p>or</p>
-                                <button type="button" onClick={startRecording}>
-                                    <img src={assets.recordVideo} alt="Record Video" />
-                                </button>
-                            </>
-                        )}
-                        <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden />
-                        {recording && (
-                            <div>
-                                <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
-                                <button type='button' onClick={stopRecording}>Stop Recording</button>
-                            </div>
-                        )}
-                        {errors.video && <span className=''>Please upload or record a video.</span>}
-                    </div>
-                </div>
 
                 <div className="form-section">
                     <p>Name<span>*</span></p>
                     <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Enter Your Name' required />
                 </div>
 
-                <div className={`form-section ${errors.age ? 'error':''}`}>
+                <div className={`form-section ${errors.age ? 'error' : ''}`}>
                     <p>Age<span>*</span></p>
                     <select onChange={onChangeHandler} name="age" required>
                         <option value="Select_age">Select</option>
@@ -188,7 +170,7 @@ const AddYoursPg = () => {
                     <input onChange={onChangeHandler} value={data.meditating_experience} type="text" name="meditating_experience" placeholder='For how many years you are meditating?' required />
                 </div>
 
-                <div className={`form-section ${errors.exp_category ? 'error':''}`}>
+                <div className={`form-section ${errors.exp_category ? 'error' : ''}`}>
                     <p>Experience's Category<span>*</span></p>
                     <select onChange={onChangeHandler} name="exp_category" required>
                         <option value="Select_category">Select</option>
@@ -205,12 +187,46 @@ const AddYoursPg = () => {
                     {errors.exp_category && <span className='error-message'>Please select a category.</span>}
                 </div>
 
-                <div className="form-section">
-                    <p>Experience's Description<span>*</span></p>
-                    <textarea onChange={onChangeHandler} value={data.exp_desc} name="exp_desc" rows="6" placeholder='Few lines about your experience...' required></textarea>
+                <div className="form-section vdo-upload-section">
+                    <p>Video<span>*</span></p>
+                    <div className="vdo-upload">
+                        {video ? (
+                            <video width="50%" controls>
+                                <source src={URL.createObjectURL(video)} type={video.type || 'video/webm'} />
+                                Your browser does not support the video tag.
+                            </video>
+                        ) : (
+                            <>
+                                <div className="vdo-input-options">
+                                    <label htmlFor="uploadVideo">
+                                        <img src={assets.uploadVideo} alt="Upload Video" />
+                                    </label>
+                                    <p>or</p>
+                                    <button type="button" onClick={startRecording}>
+                                        <img src={assets.recordVideo} alt="Record Video" />
+                                    </button>
+                                </div>
+                            </>
+                        )}
+                        <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden />
+                        {recording && (
+                            <div>
+                                <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
+                                <button type='button' onClick={stopRecording}>Stop Recording</button>
+                            </div>
+                        )}
+                        {errors.video && <span className=''>Please upload or record a video.</span>}
+                    </div>
                 </div>
-                <div className="words-count">
-                    {words_remaining}/{maxwords}
+
+                <div className="form-section">
+                    <div className="description-header">
+                        <p>Experience's Description<span>*</span></p>
+                        <div className="words-count">
+                            {words_remaining}/{maxwords}
+                        </div>
+                    </div>
+                    <textarea onChange={onChangeHandler} value={data.exp_desc} name="exp_desc" rows="6" placeholder='Few lines about your experience...' required></textarea>
                 </div>
 
                 <div className="button-container">
