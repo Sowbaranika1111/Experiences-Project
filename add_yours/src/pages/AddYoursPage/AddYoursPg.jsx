@@ -144,7 +144,7 @@ const AddYoursPg = () => {
                 <div className={`form-section ${errors.age ? 'error' : ''}`}>
                     <p>Age<span>*</span></p>
                     <select onChange={onChangeHandler} name="age" required>
-                        <option value="Select_age">Select</option>
+                        <option value="Select">Select</option>
                         <option value="0_to_10">0-10</option>
                         <option value="11_to_20">11-20</option>
                         <option value="21_to_30">21-30</option>
@@ -167,7 +167,7 @@ const AddYoursPg = () => {
 
                 <div className="form-section">
                     <p>Meditating Experience<span>*</span></p>
-                    <input onChange={onChangeHandler} value={data.meditating_experience} type="text" name="meditating_experience" placeholder='For how many years you are meditating?' required />
+                    <input onChange={onChangeHandler} value={data.meditating_experience} type="text" name="meditating_experience" placeholder='Eg: 2.3 years or 6 months' required />
                 </div>
 
                 <div className={`form-section ${errors.exp_category ? 'error' : ''}`}>

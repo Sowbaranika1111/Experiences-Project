@@ -3,6 +3,7 @@
 import express from "express"
 import cors from "cors"
 import { connectDB } from "./config/db.js"
+import expRouter from "./routes/expRoute.js"
 
 
 
@@ -18,9 +19,11 @@ app.use(cors()) // to access any backend from frontend
 // db connection
 connectDB();
 
+// api endpoints        (experiences is the model name.. expModel.js)
+app.use("/api/experiences",expRouter)
+
 //When we hit the end point , we get this msg 
-//A http method to req the data from the server
-app.get("/",(req,res)=>{ //using this response we are creating one response=>
+app.get("/",(req,res)=>{ //using this req we are creating one response=>
     res.send("API Working")
 }) 
 
@@ -28,3 +31,5 @@ app.get("/",(req,res)=>{ //using this response we are creating one response=>
 app.listen(port,()=>{
     console.log(`Server Started on http://localhost:${port}`)
 })
+
+
