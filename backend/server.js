@@ -22,6 +22,10 @@ connectDB();
 // api endpoints        (experiences is the model name.. expModel.js)
 app.use("/api/experiences",expRouter)
 
+// showing the uploaded vdos on the front-end using the url which is stored in the db
+app.use("/videos",express.static('uploads'))
+// run localhost:4000/videos/file name stored in the uploads
+
 //When we hit the end point , we get this msg 
 app.get("/",(req,res)=>{ //using this req we are creating one response=>
     res.send("API Working")

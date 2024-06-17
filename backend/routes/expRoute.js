@@ -1,5 +1,5 @@
 import express from "express"
-import { addExp } from "../controllers/expController.js"
+import { addExp ,listExp ,removeExp } from "../controllers/expController.js"
 import multer from "multer" //to create video storage system
 
 //creating express router to create get mthd / post mthd / many other mthds
@@ -22,6 +22,10 @@ const upload = multer({storage:storage})
 // sending form data to the server using post mthd ("an end-point address")
 expRouter.post("/add",upload.single("video"),addExp)
 
+// to display
+expRouter.get("/list",listExp)
+// to remove
+expRouter.post("/remove",removeExp)
 export default expRouter;
 
 // then setting this up in the server.js file (api endpoints)
