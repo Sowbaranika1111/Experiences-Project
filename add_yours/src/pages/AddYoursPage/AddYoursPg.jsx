@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './AddYoursPg.css';
 import { assets } from '../../assets/assets';
 import axios from "axios"
+import { toast } from 'react-toastify';
 
 const AddYoursPg = () => {
 
@@ -150,8 +151,9 @@ const AddYoursPg = () => {
                 exp_desc: ""
             })
             setVideo(false)
+            toast.success(response.data.message) //we have added exp added msg in the backend response 
         } else {
-
+            toast.error(response.data.message)
         }
     }
 

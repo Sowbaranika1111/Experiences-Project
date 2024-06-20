@@ -1,14 +1,18 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import AddYoursPg from './pages/AddYoursPage/AddYoursPg'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div>
-      <Navbar/>
+      {/* mounting the toast container */}
+      <ToastContainer/>
+      <Navbar />
       <hr />
       <div className="app-content">
-        <AddYoursPg/>
+        <AddYoursPg />
       </div>
     </div>
   )

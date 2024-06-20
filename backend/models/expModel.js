@@ -17,7 +17,7 @@ const expSchema = new mongoose.Schema({
 
 // using the above schema , we create a model
 
-const expModel = mongoose.model.food || mongoose.model("experiences",expSchema);
+const expModel = mongoose.model.experiences || mongoose.model("experiences",expSchema);
 
 export default expModel
 
