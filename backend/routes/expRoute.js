@@ -12,9 +12,11 @@ const expRouter = express.Router();
 const storage = multer.diskStorage({
     destination:"uploads",
     filename:(req,file,cb) => {
-        return cb(null,`${Date.now()}${file.originalname}`) //to ceate a unique file name everytime
+        const ext = file.mimetype.split("/")[1];
+        //return cb(null,`${Date.now()}${file.originalname}`) //to ceate a unique file name everytime
+        return cb(null,`${Date.now()}.${ext}`);
     }
-})
+});
 
 // creating middleware upload 
 const upload = multer({storage:storage})

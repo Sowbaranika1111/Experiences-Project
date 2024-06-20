@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './AddYoursPg.css';
 import { assets } from '../../assets/assets';
+import axios from "axios"
 
 const AddYoursPg = () => {
+
+    const url = "http://localhost:4000";
 
     const [data, setData] = useState({
         name: "",
@@ -11,7 +14,7 @@ const AddYoursPg = () => {
         country: "",
         meditating_experience: "",
         exp_category: "Select",
-        exp_desc: "",
+        exp_desc: ""
     })
     const [description, setDescriptionLimit] = useState('');
     const maxwords = 111;
@@ -116,7 +119,7 @@ const AddYoursPg = () => {
         setErrors(newErrors);
 
         if (!newErrors.age && !newErrors.exp_category && !newErrors.video) {
-            alert("Form submitted")
+            // alert("Form submitted")
             console.log("Form submitted", data);
         }
 
@@ -130,6 +133,26 @@ const AddYoursPg = () => {
         formData.append("meditating_experience", data.meditating_experience)
         formData.append("exp_category", data.exp_category)
         formData.append("exp_desc", data.exp_desc)
+
+        // we use axios to call the api 
+        // AddYoursPg is created using Post mthd so use the same mthd for axios also
+        // this is the end point to upload the prdt
+        // form data will be added in the db, the videos will be stored in the backend folder
+        const response = await axios.post(`${url}/api/experiences/add`, formData);
+        if (response.data.success) {
+            setData({
+                name: "",
+                age: "Select",
+                profession: "",
+                country: "",
+                meditating_experience: "",
+                exp_category: "Select",
+                exp_desc: ""
+            })
+            setVideo(false)
+        } else {
+
+        }
     }
 
     return (
@@ -180,7 +203,7 @@ const AddYoursPg = () => {
                         <option value="Miracles">Miracles</option>
                         <option value="Healing">Healing</option>
                         <option value="Visions">Visions</option>
-                        <option value="Messages_received">Messages received</option>
+                        <option value="Messages_Received">Messages received</option>
                         <option value="Astral_Travel">Astral Travel</option>
                         <option value="Other_Experiences">Other Experiences</option>
                     </select>
@@ -193,6 +216,7 @@ const AddYoursPg = () => {
                         {video ? (
                             <video width="50%" controls>
                                 <source src={URL.createObjectURL(video)} type={video.type || 'video/webm'} />
+                                {/* <source src={`/uploads/${video}`} type="video/webm" /> */}
                                 Your browser does not support the video tag.
                             </video>
                         ) : (
