@@ -5,7 +5,6 @@
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    /* Change this to the desired background color */
     color: black;
     font-family: Arial, sans-serif;
     background-color: rgb(157, 118, 246);
@@ -14,7 +13,6 @@
 /* Logo styling */
 .navbar .logo {
     width: 150px;
-    /* Set the width to 32px */
     height: 40px;
 }
 
@@ -80,6 +78,38 @@
     /* Set the width to 32px */
     height: 32px;
     /* Set the height to 32px */
+}
+
+.navbar-profile img{
+    height: 65px;
+    width: 5.5vw;
+    min-width: 70px;
+    cursor:pointer;
+    border-radius: 50%;
+}
+
+.navbar-profile{
+    position: relative;
+}
+
+.navbar-profile-dropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+
+.navbar-profile:hover  .navbar-profile-dropdown{
+    display: flex;
+    flex-direction: column;
+    background-color: #dad1d1;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid #952b87;
+    outline: 2px solid white;
+    list-style: none;
+    font-size: medium;
+    cursor:pointer;
 }
 
 /* For responsiveness  */

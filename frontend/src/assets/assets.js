@@ -2,6 +2,8 @@
 import boy_happy_img from './boy_happy_img.png'
 import search_icon from './search_icon.png'
 
+import profile_icon from './profile_icon.png'
+
 import cross_icon from './cross_icon.png'
 
 import AddYours_video from './AddYours_video.mp4'
@@ -36,6 +38,7 @@ import youtube_footer_icon from './youtube_icon.png'
 export const assets = {
     boy_happy_img,
     search_icon,
+    profile_icon,
     insta_footer_icon,
     fb_footer_icon,
     youtube_footer_icon
