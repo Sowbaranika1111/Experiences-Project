@@ -198,16 +198,16 @@ const AddYoursPg = () => {
                 <div className={`form-section ${errors.exp_category ? 'error' : ''}`}>
                     <p>Experience's Category<span>*</span></p>
                     <select onChange={onChangeHandler} name="exp_category" required>
-                        <option value="Select_category">Select</option>
-                        <option value="Mental_Health">Mental Health</option>
-                        <option value="Physical_Health">Physical Health</option>
+                        <option value="Select">Select</option>
+                        <option value="Mental Health">Mental Health</option>
+                        <option value="Physical Health">Physical Health</option>
                         <option value="Manifestations">Manifestations</option>
                         <option value="Miracles">Miracles</option>
                         <option value="Healing">Healing</option>
                         <option value="Visions">Visions</option>
-                        <option value="Messages_Received">Messages received</option>
-                        <option value="Astral_Travel">Astral Travel</option>
-                        <option value="Other_Experiences">Other Experiences</option>
+                        <option value="Messages received">Messages Received</option>
+                        <option value="Astral Travel">Astral Travel</option>
+                        <option value="Other Experiences">Other Experiences</option>
                     </select>
                     {errors.exp_category && <span className='error-message'>Please select a category.</span>}
                 </div>

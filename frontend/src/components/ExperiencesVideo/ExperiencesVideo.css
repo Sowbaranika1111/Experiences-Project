@@ -1,29 +1,61 @@
-.exp-video{
-    width: 80%;
+.exp-video {
+    width: 200px; /* Fixed width for the container */
     margin: auto;
-    border-radius: 50px;
+    border-radius: 15px;
     box-shadow: 0px 0px 10px #7b99ed;
     transition: 0.3s;
     animation: fadeIn 1s;
+    overflow: hidden;
 }
 
-.exp-video-display{
-    width: 15vw;
-    height: 100px;
-    margin: auto;
+.exp-video-container {
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    position: relative;
+}
+
+.exp-video-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 15px 15px 0px 0px;
 }
 
-.exp-video-info{
-    padding: 20px;
+.exp-video-info {
+    padding: 10px;
+    height: 80px; /* Adjust height to show 2 lines of description */
+    transition: height 0.3s ease;
+    background-color: white;
+    overflow: hidden;
 }
 
-.exp-video-prsn-name{
-    font-size: 15px;
+.exp-video-prsn-name {
+    font-size: 12px;
     font-weight: 500;
     color: rgb(151, 88, 228);
+    margin: 5px 0;
 }
-.exp-video-desc{
+
+.exp-video-desc {
     color: #686868;
     font-size: 12px;
+    min-height: 2em;
+    transition: max-height 0.1s ease;
+}
+
+.user-details {
+    display: none; /* Initially hide user details */
+    font-size: 12px;
+    color: rgb(151, 88, 228);
+    margin-top: 2px;
+}
+
+.exp-video:hover .exp-video-info {
+    height: auto; /* Expand to show full content on hover */
+}
+
+.exp-video:hover .user-details {
+    display: block; /* Show user details on hover */
 }

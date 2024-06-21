@@ -5,14 +5,14 @@ import ExploreExperiences from '../../components/ExploreExperiences/ExploreExper
 import ExpDisplay from '../../components/ExpDisplay/ExpDisplay'
 
 const Home = ({setAddYours}) => {
-// state variable is category , setter function name is setCategory,initialising it with one string 'All'
-    const [category,setCategory] = useState("All");
+// state variable is exp_category , setter function name is setexp_category,initialising it with one string 'All'
+    const [exp_category,setexp_category] = useState("All");
 
   return (
     <div>
       <Header/>
-      <ExploreExperiences category={category} setCategory={setCategory} setAddYours={setAddYours}/>
-      <ExpDisplay category={category}/>
+      <ExploreExperiences exp_category={exp_category} setexp_category={setexp_category} setAddYours={setAddYours}/>
+      <ExpDisplay exp_category={exp_category}/>
     </div>
   )
 }

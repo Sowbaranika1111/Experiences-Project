@@ -2,7 +2,7 @@ import React from 'react';
 import './ExploreExperiences.css';
 import { experiences_list, addYoursVideo } from '../../assets/assets';
 
-const ExploreExperiences = ({ category, setCategory , setAddYours}) => {
+const ExploreExperiences = ({ exp_category, setexp_category , setAddYours}) => {
   const handleAddYoursVideoClick = () => {
     setAddYours(true);
   };
@@ -18,10 +18,10 @@ const ExploreExperiences = ({ category, setCategory , setAddYours}) => {
       <div className="explore-exp-list">
         {experiences_list.map((item, index) => {
           return (
-            // writing onClick func and passing setCategory function
-            <div onClick={() => setCategory(prev => prev === item.exp_name ? "All" : item.exp_name)} key={index} className="explore-exp-list-item">
+            // writing onClick func and passing setexp_category function
+            <div onClick={() => setexp_category(prev => prev === item.exp_name ? "All" : item.exp_name)} key={index} className="explore-exp-list-item">
               {/* if we click on 1st exp ,an active cls name is added to it,then if we click on other exps that cls name will be moved to the one which is clicked */}
-              <img className={category === item.exp_name ? "active" : ""} src={item.exp_img} alt="" />
+              <img className={exp_category === item.exp_name ? "active" : ""} src={item.exp_img} alt="" />
               <p>{item.exp_name}</p>
             </div>
           )

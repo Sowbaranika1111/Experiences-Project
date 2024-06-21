@@ -94,7 +94,7 @@ export const exp_videos_list = [
         name: "Person 1",
         profession: "IT employee",
         video: video_1,
-        category: "Mental Health",
+        exp_category: "Mental Health",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -102,7 +102,7 @@ export const exp_videos_list = [
         name: "Person 2",
         profession: "IT employee",
         video: video_2,
-        category: "Physical Health",
+        exp_category: "Physical Health",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -110,7 +110,7 @@ export const exp_videos_list = [
         name: "Person 3",
         profession: "IT employee",
         video: video_3,
-        category: "Manifestations",
+        exp_category: "Manifestations",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -118,7 +118,7 @@ export const exp_videos_list = [
         name: "Person 4",
         profession: "IT employee",
         video: video_4,
-        category: "Miracles",
+        exp_category: "Miracles",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -126,7 +126,7 @@ export const exp_videos_list = [
         name: "Person 5",
         profession: "IT employee",
         video: video_5,
-        category: "Healing",
+        exp_category: "Healing",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -134,7 +134,7 @@ export const exp_videos_list = [
         name: "Person 6",
         profession: "IT employee",
         video: video_6,
-        category: "Visions",
+        exp_category: "Visions",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -142,7 +142,7 @@ export const exp_videos_list = [
         name: "Person 7",
         profession: "IT employee",
         video: video_7,
-        category: "Messages received",
+        exp_category: "Messages received",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -150,7 +150,7 @@ export const exp_videos_list = [
         name: "Person 8",
         profession: "IT employee",
         video: video_8,
-        category: "Astral Travel",
+        exp_category: "Astral Travel",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -158,7 +158,7 @@ export const exp_videos_list = [
         name: "Person 9",
         profession: "IT employee",
         video: video_9,
-        category: "Other Experiences",
+        exp_category: "Other Experiences",
         description: "Lorem Ipsum experienced"
     },
     {
@@ -166,7 +166,7 @@ export const exp_videos_list = [
         name: "Thankyou",
         profession: "College Student",
         video: video_10,
-        category: "Healing",
+        exp_category: "Healing",
         description: "I have experienced ..."
     }
 ]
