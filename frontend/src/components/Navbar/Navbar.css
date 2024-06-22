@@ -36,7 +36,7 @@
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
 }
 
 /* Image within the navbar-right section */
@@ -78,6 +78,11 @@
     /* Set the width to 32px */
     height: 32px;
     /* Set the height to 32px */
+}
+
+.navbar-favourite img{
+    width: 35px;
+    height: 35px;
 }
 
 .navbar-profile img{

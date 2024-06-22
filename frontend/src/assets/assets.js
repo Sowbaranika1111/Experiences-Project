@@ -1,7 +1,9 @@
 //Importing images and icons
 import boy_happy_img from './boy_happy_img.png'
 import search_icon from './search_icon.png'
-
+import fav_icon from './add_to_fav_DarkPink_icon.png'
+import fav_icon_on_videos from './add_to_fav_pink_icon.png'
+import added_to_fav from './added_to_fav_video.mp4'
 import profile_icon from './profile_icon.png'
 
 import cross_icon from './cross_icon.png'
@@ -38,6 +40,9 @@ import youtube_footer_icon from './youtube_icon.png'
 export const assets = {
     boy_happy_img,
     search_icon,
+    fav_icon,
+    fav_icon_on_videos,
+    added_to_fav,
     profile_icon,
     insta_footer_icon,
     fb_footer_icon,

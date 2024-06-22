@@ -1,12 +1,20 @@
 // // Here we get the video , description ,id, etc as a props from the ExpDisplay component
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './ExperiencesVideo.css';
 import { StoreContext } from '../../context/StoreContext';
+import { assets } from '../../assets/assets';
 
 const ExperiencesVideo = ({ id, name, age, profession, country, meditating_experience, exp_category, exp_desc, video }) => {
 
     const { url } = useContext(StoreContext)
+
+
+    // Add to fav
+    const [fav, setToFav] = useState(false)
+    const handleFavClick = () => {
+        setToFav(!fav)
+    }
 
     return (
         <div className='exp-video'>
@@ -14,9 +22,14 @@ const ExperiencesVideo = ({ id, name, age, profession, country, meditating_exper
                 <video className='exp-video-display' controls>
                     {/* <source src={url+"/videos/"+video} type={video.type || 'video/webm'} /> */}
                     <source src={url + "/videos/" + video} type={"video/mp4" || 'video/webm'} />
-
                     Your browser does not support the video tag.
                 </video>
+                {!fav
+                    ? <img className='add-to-fav' onClick={handleFavClick} src={assets.fav_icon_on_videos} alt="Add to fav" />
+                    : <div className="fav-added">
+                        <img className='remove-from-fav' onClick={handleFavClick} src={assets.fav_icon} alt="Remove from fav" />
+                    </div>
+                }
             </div>
             <div className="exp-video-info">
                 <p className='exp-video-prsn-name'><i>{name} ~ {profession}</i></p>

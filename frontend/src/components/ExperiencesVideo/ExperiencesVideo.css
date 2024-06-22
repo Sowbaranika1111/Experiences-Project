@@ -59,3 +59,31 @@
 .exp-video:hover .user-details {
     display: block; /* Show user details on hover */
 }
+
+
+.add-to-fav, .remove-from-fav {
+    cursor: pointer;
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+}
+
+.exp-video-container {
+    position: relative;
+}
+
+.add-to-fav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.fav-added {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.remove-from-fav {
+    width: 27px; /* Adjust size as needed */
+    height: 27px; /* Adjust size as needed */
+}
