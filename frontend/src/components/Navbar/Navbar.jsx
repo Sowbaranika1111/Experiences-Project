@@ -20,12 +20,12 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <div className='navbar'>
-      <Link to='/'><img src={assets.boy_happy_img} alt="" className='logo ' /></Link>
+      <Link to='/'><img src={assets.boy_happy_img} alt="" className='logo'/></Link>
       <ul className="navbar-menu">
-        <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</Link>
-        <a href='#explore-exp' onClick={() => setMenu("experiences")} className={menu === "experiences" ? "active" : ""}>experiences</a>
-        <a href='#about-us' onClick={() => setMenu("about us")} className={menu === "about us" ? "active" : ""}>about us</a>
-        <a href='#footer' onClick={() => setMenu("contact us")} className={menu === "contact us" ? "active" : ""}>contact us</a>
+        <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>HOME</Link>
+        <a href='#explore-exp' onClick={() => setMenu("experiences")} className={menu === "experiences" ? "active" : ""}>EXPERIENCES</a>
+        <a href='#about-us' onClick={() => setMenu("about us")} className={menu === "about us" ? "active" : ""}>ABOUT US</a>
+        <a href='#footer' onClick={() => setMenu("contact us")} className={menu === "contact us" ? "active" : ""}>CONTACT US</a>
       </ul>
       <div className="navbar-right">
         <div className="navbar-search-icon icon">
@@ -36,7 +36,7 @@ const Navbar = ({ setShowLogin }) => {
           :
           <>
             <div className="navbar-favourite">
-              <img src={assets.fav_icon} alt="" />
+              <Link to='/fav'><img src={assets.fav_icon} alt="" /></Link>
             </div>
             <div className='navbar-profile'>
               <img src={assets.profile_icon} alt="" />

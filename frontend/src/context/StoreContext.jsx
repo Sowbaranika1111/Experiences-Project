@@ -29,6 +29,29 @@ const StoreContextProvider = (props) => {
         loadData();
     }, [])
 
+    // Creating fav videos state
+    const [favVideos, setFavVideos] = useState({});
+
+    // Function to add a video to favorites
+    const addToFav = (videoId) => {
+        setFavVideos(prevFavVideos => ({
+            ...prevFavVideos,
+            [videoId]: true
+        }));
+    };
+
+    // Function to remove a video from favorites
+    const removeFromFav = (videoId) => {
+        setFavVideos(prevFavVideos => {
+            const updatedFavVideos = { ...prevFavVideos };
+            delete updatedFavVideos[videoId];
+            return updatedFavVideos;
+        });
+    };
+    
+    // useEffect(() =>{
+    //     console.log(favVideos);
+    // },[favVideos]) 
 
     // if we add any element in this obj, we can access that element from any other component through this context
     const contextValue = {
@@ -36,7 +59,11 @@ const StoreContextProvider = (props) => {
 
         url,//to access this variable in any component , we pass it here
         token,
-        setToken
+        setToken,
+
+        favVideos,
+        addToFav,
+        removeFromFav
     }
 
     return (

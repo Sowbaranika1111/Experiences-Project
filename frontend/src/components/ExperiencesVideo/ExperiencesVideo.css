@@ -61,10 +61,13 @@
 }
 
 
-.add-to-fav, .remove-from-fav {
+.add-to-fav{
     cursor: pointer;
     width: 24px; /* Adjust size as needed */
     height: 24px; /* Adjust size as needed */
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .exp-video-container {
@@ -73,17 +76,16 @@
 
 .add-to-fav {
     position: absolute;
-    top: 10px;
+    top: 1.5px;
     right: 10px;
 }
 
-.fav-added {
+.fav-added img{
     position: absolute;
-    top: 10px;
+    top: 1.5px;
     right: 10px;
+    cursor: pointer;
+    width: 27px;
+    height: 27px;
 }
 
-.remove-from-fav {
-    width: 27px; /* Adjust size as needed */
-    height: 27px; /* Adjust size as needed */
-}
