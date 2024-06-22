@@ -1,0 +1,238 @@
+/* AddToFav.css */
+
+.exp-video {
+  width: 200px; /* Adjusted width for the container */
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #7b99ed;
+  transition: 0.3s;
+  animation: fadeIn 1s;
+  overflow: hidden;
+  background-color: white; /* Added background color */
+}
+
+.exp-video-container {
+  position: relative;
+}
+
+.video-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.exp-category {
+  margin: 0;
+  font-weight: bold;
+}
+
+.exp-video-display {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.exp-video-info {
+  padding: 10px;
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
+
+.exp-video-prsn-name {
+  font-size: 14px; /* Adjusted font size */
+  font-weight: 500;
+  color: rgb(151, 88, 228);
+  margin: 5px 0;
+}
+
+.exp-video-desc {
+  color: #686868;
+  font-size: 12px;
+}
+
+.user-details {
+  font-size: 12px;
+  color: rgb(151, 88, 228);
+  margin-top: 2px;
+  display: none; /* Initially hide user details */
+}
+
+.exp-video:hover .user-details {
+  display: block; /* Show user details on hover */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+b {
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
+/* 2222222222222222222222 */
+
+/* .exp-video {
+    width: 200px; 
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #7b99ed;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+    overflow: hidden;
+}
+
+.exp-video-container {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+.exp-video-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.exp-video-info {
+    padding: 10px;
+    height: 80px; 
+    transition: height 0.3s ease;
+    background-color: white;
+    overflow: hidden;
+}
+
+.exp-video-prsn-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(151, 88, 228);
+    margin: 5px 0;
+}
+
+.exp-video-desc {
+    color: #686868;
+    font-size: 12px;
+    min-height: 2em;
+    transition: max-height 0.1s ease;
+}
+
+.user-details {
+    display: none;
+    font-size: 12px;
+    color: rgb(151, 88, 228);
+    margin-top: 2px;
+}
+
+.exp-video:hover .exp-video-info {
+    height: auto; 
+}
+
+.exp-video:hover .user-details {
+    display: block; 
+} */
+
+
+/* 11111111111111111111111111111 */
+
+
+/* .fav {
+    padding: 10px;
+}
+
+.fav-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-items-title,
+.video-items-item {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.video-items-item video {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.video-items-item p,
+.video-items-title p {
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+}
+
+.video-items-title p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.video-items-item p b {
+    cursor: pointer;
+    color: red;
+}
+
+.video-items-item p.desc {
+    font-size: 12px;
+}
+
+.fav hr {
+    height: 1px;
+    border: none;
+    background-color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+
+    .video-items-title,
+    .video-items-item {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .video-items-title,
+    .video-items-item {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .video-items-item p {
+        padding: 5px 0;
+    }
+
+    .video-items-item video {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-items-title p {
+        font-size: medium;
+    }
+
+    .video-items-item p {
+        font-size: small;
+    }
+
+    .video-items-item video {
+        max-width: 100%;
+    }
+} */

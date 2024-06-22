@@ -1,6 +1,6 @@
 // // Here we get the video , description ,id, etc as a props from the ExpDisplay component
 
-import React, { useContext, useState ,useEffect} from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './ExperiencesVideo.css';
 import { StoreContext } from '../../context/StoreContext';
 import { assets } from '../../assets/assets';
@@ -41,13 +41,17 @@ const ExperiencesVideo = ({ id, name, age, profession, country, meditating_exper
                 }
             </div>
             <div className="exp-video-info">
+
                 <p className='exp-video-prsn-name'><i>{name} ~ {profession}</i></p>
+
                 <div className="exp-video-desc">
                     <p>{exp_desc}</p>
                 </div>
+
                 <div className="user-details">
                     <p>{country} | Meditating for {meditating_experience} | </p>
                 </div>
+
             </div>
         </div>
     );
