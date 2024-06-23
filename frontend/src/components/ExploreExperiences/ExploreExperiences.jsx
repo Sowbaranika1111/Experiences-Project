@@ -1,18 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import './ExploreExperiences.css';
 import { experiences_list, addYoursVideo } from '../../assets/assets';
 
-const ExploreExperiences = ({ exp_category, setexp_category , setAddYours}) => {
-  const handleAddYoursVideoClick = () => {
-    setAddYours(true);
-  };
+const ExploreExperiences = ({ exp_category, setexp_category}) => {
   return (
     <div className='explore-exp' id='explore-exp'>
       <div className="explore-exp-header">
         <h1>Explore The Experiences</h1>
-        <video className='tell-your-tale-video' onClick={handleAddYoursVideoClick} src={addYoursVideo.AddYours_video} autoPlay loop muted width="300">
+        <Link to='/add-yours'> <video className='tell-your-tale-video' src={addYoursVideo.AddYours_video} autoPlay loop muted width="300">
           Your browser does not support the video tag.
         </video>
+        </Link>
       </div>
       <p className='explore-exp-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tempore esse, vitae nemo assumenda et mollitia tenetur vero fugiat explicabo ipsum repudiandae rem.</p>
       <div className="explore-exp-list">
