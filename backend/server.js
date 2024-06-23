@@ -6,6 +6,7 @@ import { connectDB } from "./config/db.js"
 import expRouter from "./routes/expRoute.js"
 import userRouter from "./routes/userRoute.js"
 import 'dotenv/config'
+import favRouter from "./routes/favRoute.js"
 
 //app config
 const app = express()
@@ -28,6 +29,8 @@ app.use("/videos",express.static('uploads')) //mounting uploads to videos(anyNam
 // run localhost:4000/videos/file name stored in the uploads
 
 app.use("/api/user",userRouter)
+
+app.use("/api/fav",favRouter)
 
 //When we hit the end point , we get this msg 
 app.get("/",(req,res)=>{ //using this req we are creating one response=>
