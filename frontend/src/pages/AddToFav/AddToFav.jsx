@@ -6,7 +6,7 @@ const AddToFav = () => {
   const { url, favVideos, exp_videos_list, removeFromFav } = useContext(StoreContext);
 
   return (
-    <div>
+    <div className='container'>
       {exp_videos_list.map((item, index) => {
         if (favVideos[item._id]) {
           return (
@@ -25,12 +25,12 @@ const AddToFav = () => {
                   <div className="exp-video-desc">
                     <p>{item.exp_desc}</p>
                   </div>
+                  <hr />
                   <div className="user-details">
                     <p>{item.country} | Meditating For {item.meditating_experience}</p>
                   </div>
                 </div>
               </div>
-              <hr />
             </div>
           );
         }

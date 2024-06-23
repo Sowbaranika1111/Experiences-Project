@@ -1,34 +1,43 @@
 .exp-video {
-    width: 200px; /* Fixed width for the container */
+    width: 80%; /* Fixed width for the container */
     margin: auto;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #7b99ed;
     transition: 0.3s;
     animation: fadeIn 1s;
     overflow: hidden;
+
 }
 
 .exp-video-container {
-    width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
+    width: 80%;
+    padding-top: 75%; /* 1:1 Aspect Ratio */
     position: relative;
 }
 
 .exp-video-display {
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
+    margin: auto;
     border-radius: 15px 15px 0px 0px;
 }
 
 .exp-video-info {
-    padding: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
     height: 80px; /* Adjust height to show 2 lines of description */
     transition: height 0.3s ease;
     background-color: white;
     overflow: hidden;
+}
+
+.exp-video-info hr{
+    border: none;
+    border-top: 1px solid #cbcaca;
 }
 
 .exp-video-prsn-name {
@@ -43,6 +52,7 @@
     font-size: 12px;
     min-height: 2em;
     transition: max-height 0.1s ease;
+    padding: 5px;
 }
 
 .user-details {
@@ -59,7 +69,6 @@
 .exp-video:hover .user-details {
     display: block; /* Show user details on hover */
 }
-
 
 .add-to-fav{
     cursor: pointer;

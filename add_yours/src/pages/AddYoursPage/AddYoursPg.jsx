@@ -18,27 +18,24 @@ const AddYoursPg = () => {
         exp_desc: ""
     })
     const [description, setDescriptionLimit] = useState('');
-    const maxwords = 111;
+    const maxChars = 222;
 
     const onChangeHandler = (event) => {
         const name = event.target.name;
         const value = event.target.value
 
         // Description words' count
-        if (name === 'exp_desc') {
-            const words_entered = value.split(/\s+/);
-            if (words_entered.filter(Boolean).length <= maxwords) {
-                setDescriptionLimit(value);
-                setData(data => ({ ...data, [name]: value }))
-            }
+        if (value.length <= maxChars) {
+            setDescriptionLimit(value);
+            setData(data => ({ ...data, [name]: value }))
         }
         else {
             setData(data => ({ ...data, [name]: value }))
         }
     }
-    // Description words' count
-    const word_count = description.split(/\s+/).filter(Boolean).length;
-    const words_remaining = maxwords - word_count;
+    // Description character count
+    const char_count = description.length;
+    const chars_remaining = maxChars - char_count;
 
     // to check if the data is getting updated
     // useEffect(()=>{
@@ -249,7 +246,7 @@ const AddYoursPg = () => {
                     <div className="description-header">
                         <p>Experience's Description<span>*</span></p>
                         <div className="words-count">
-                            {words_remaining}/{maxwords}
+                            {chars_remaining}/{maxChars}
                         </div>
                     </div>
                     <textarea onChange={onChangeHandler} value={data.exp_desc} name="exp_desc" rows="6" placeholder='Few lines about your experience...' required></textarea>

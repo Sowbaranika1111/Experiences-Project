@@ -3,7 +3,6 @@ import Navbar from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import AddToFav from './pages/AddToFav/AddToFav'
-import User_profile from './pages/User_Profile/User_profile'
 import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import AddYoursPopup from './components/AddYoursPopup/AddYoursPopup'
@@ -25,7 +24,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home setAddYours={setAddYours}/>} />
           <Route path='/fav' element={<AddToFav/>} />
-          <Route path='/User_Profile' element={<User_profile />} />
+          <Route path='/UserProfile' element={<UserProfile />} />
         </Routes>
       </div>
       <Footer />

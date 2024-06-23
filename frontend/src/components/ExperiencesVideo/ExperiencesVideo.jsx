@@ -48,6 +48,8 @@ const ExperiencesVideo = ({ id, name, age, profession, country, meditating_exper
                     <p>{exp_desc}</p>
                 </div>
 
+                <hr />
+
                 <div className="user-details">
                     <p>{country} | Meditating for {meditating_experience} | </p>
                 </div>
