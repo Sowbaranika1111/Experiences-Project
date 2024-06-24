@@ -31,7 +31,7 @@ const loginUser = async (req, res) => {
 //create and send the token using the response to the user
 // defined an env variable JWT_SECRET
 const createToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET)
+    return jwt.sign({id}, process.env.JWT_SECRET)
 }
 
 // register user
