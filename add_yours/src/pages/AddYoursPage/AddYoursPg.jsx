@@ -233,9 +233,11 @@ const AddYoursPg = () => {
                         )}
                         <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden />
                         {recording && (
-                            <div>
-                                <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
-                                <button type='button' onClick={stopRecording}>Stop Recording</button>
+                            <div className="modal">
+                                <div className='modal-content'>
+                                    <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
+                                    <button type='button' onClick={stopRecording}>Stop Recording</button>
+                                </div>
                             </div>
                         )}
                         {errors.video && <span className=''>Please upload or record a video.</span>}

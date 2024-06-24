@@ -16,6 +16,41 @@ const StoreContextProvider = (props) => {
     const fetch_exp_list = async () => {
         const response = await axios.get(url + "/api/experiences/list")
         set_exp_videos_list(response.data.data)
+    } //line 55 on refreshing to prevent..
+
+    // Creating fav videos state
+    const [favVideos, setFavVideos] = useState({});
+
+    // Function to add a video to favorites
+    const addToFav = async (videoId) => {
+        setFavVideos(prevFavVideos => ({
+            ...prevFavVideos,
+            [videoId]: true
+        }));
+        //after setting up the API
+        if (token) {
+            await axios.post(url + "/api/fav/add", { videoId }, { headers: { token } })
+        }
+    };
+
+    // Function to remove a video from favorites
+    const removeFromFav = async (videoId) => {
+        setFavVideos(prevFavVideos => {
+            const updatedFavVideos = { ...prevFavVideos };
+            delete updatedFavVideos[videoId];
+            return updatedFavVideos;
+        });
+        //after setting up the API
+        if (token) {
+            await axios.post(url + "/api/fav/remove", { videoId }, { headers: { token } })
+        }
+    };
+
+    // To store the fav videos even after refreshing
+    const loadFavData = async (token) => {
+        const response = await axios.post(url + "/api/fav/list", {}, { headers: { token } }) //to get the data nothing we have to sen so empty{}
+        setFavVideos(response.data.favData)//save the fav data in a variable
+        //call this function whenever the page is loaded line 56 useEffect
     }
 
     //on refreshing to prevent logging out, storing the token in a token state when refreshing
@@ -24,31 +59,12 @@ const StoreContextProvider = (props) => {
             await fetch_exp_list();
             if (localStorage.getItem("token")) {
                 setToken(localStorage.getItem("token"))
+                await loadFavData(localStorage.getItem("token"))
             }
         }
         loadData();
     }, [])
 
-    // Creating fav videos state
-    const [favVideos, setFavVideos] = useState({});
-
-    // Function to add a video to favorites
-    const addToFav = (videoId) => {
-        setFavVideos(prevFavVideos => ({
-            ...prevFavVideos,
-            [videoId]: true
-        }));
-    };
-
-    // Function to remove a video from favorites
-    const removeFromFav = (videoId) => {
-        setFavVideos(prevFavVideos => {
-            const updatedFavVideos = { ...prevFavVideos };
-            delete updatedFavVideos[videoId];
-            return updatedFavVideos;
-        });
-    };
-    
     // useEffect(() =>{
     //     console.log(favVideos);
     // },[favVideos]) 
