@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    background-color: rgb(157, 118, 246);
+}
+
+/* Logo styling */
+.navbar .logo {
+    width: 150px;
+    height: 40px;
+}
+
+.navbar .profile {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+}
