@@ -10,9 +10,9 @@
 
 .exp-display-list{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
     margin-top: 30px;
-    gap: 20px;
-    row-gap : 20px;
-    column-gap: 10px;
+    gap: 10px;
+    row-gap : 10px;
+    column-gap: 15px;
 }

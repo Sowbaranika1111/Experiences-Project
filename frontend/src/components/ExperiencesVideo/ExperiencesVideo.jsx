@@ -41,7 +41,7 @@ const ExperiencesVideo = ({ id, name, age, profession, country, meditating_exper
                 }
             </div>
             <div className="exp-video-info">
-
+                <p className='exp-category'>{exp_category}</p>
                 <p className='exp-video-prsn-name'><i>{name} ~ {profession}</i></p>
 
                 <div className="exp-video-desc">
