@@ -14,8 +14,12 @@ const StoreContextProvider = (props) => {
 
 
     const fetch_exp_list = async () => {
-        const response = await axios.get(url + "/api/experiences/list")
-        set_exp_videos_list(response.data.data)
+        try {
+            const response = await axios.get(url + "/api/experiences/list");
+            set_exp_videos_list(response.data.data);
+        } catch (error) {
+            console.error("Error fetching experiences list:", error);
+        }
     } //line 55 on refreshing to prevent..
 
     // Creating fav videos state
@@ -29,7 +33,11 @@ const StoreContextProvider = (props) => {
         }));
         //after setting up the API
         if (token) {
-            await axios.post(url + "/api/fav/add", { videoId }, { headers: { token } })
+            try {
+                await axios.post(url + "/api/fav/add", { videoId }, { headers: { token } });
+            } catch (error) {
+                console.error("Error adding to favorites:", error);
+            }
         }
     };
 
@@ -42,14 +50,28 @@ const StoreContextProvider = (props) => {
         });
         //after setting up the API
         if (token) {
-            await axios.post(url + "/api/fav/remove", { videoId }, { headers: { token } })
+            try {
+                await axios.post(url + "/api/fav/remove", { videoId }, { headers: { token } });
+            } catch (error) {
+                console.error("Error removing from favorites:", error);
+            }
         }
     };
 
     // To store the fav videos even after refreshing
     const loadFavData = async (token) => {
-        const response = await axios.post(url + "/api/fav/list", {}, { headers: { token } }) //to get the data nothing we have to sen so empty{}
-        setFavVideos(response.data.favData)//save the fav data in a variable
+        try {
+            const response = await axios.post(url + "/api/fav/list", {}, { headers: { token } }) //to get the data nothing we have to send so empty{}
+
+            if (response.data && response.data.favData) {
+                setFavVideos(response.data.favData)//save the fav data in a variable
+            } else {
+                setFavVideos({});
+            }
+        }
+        catch (error) {
+            console.error("Error loading favorite data:", error);
+        }
         //call this function whenever the page is loaded line 56 useEffect
     }
 
@@ -57,9 +79,10 @@ const StoreContextProvider = (props) => {
     useEffect(() => {
         async function loadData() {
             await fetch_exp_list();
-            if (localStorage.getItem("token")) {
-                setToken(localStorage.getItem("token"))
-                await loadFavData(localStorage.getItem("token"))
+            const storedToken = localStorage.getItem("token");
+            if (storedToken) {
+                setToken(storedToken);
+                await loadFavData(storedToken);
             }
         }
         loadData();
