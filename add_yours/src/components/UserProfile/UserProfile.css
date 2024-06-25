@@ -45,3 +45,20 @@
     transition: transform 0.3s ease;
 }
 
+/* Add Yours Section */
+.add-yours-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-yours-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.add-yours-content.show {
+    max-height: 1000px;
+    /* Adjust this value based on your content */
+    transition: max-height 0.5s ease-in;
+}
