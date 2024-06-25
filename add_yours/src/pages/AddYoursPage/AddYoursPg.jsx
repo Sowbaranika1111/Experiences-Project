@@ -10,6 +10,7 @@ const AddYoursPg = () => {
 
     const [data, setData] = useState({
         name: "",
+        email:"",
         age: "Select",
         profession: "",
         country: "",
@@ -100,6 +101,7 @@ const AddYoursPg = () => {
 
     const [errors, setErrors] = useState({
         age: false,
+        email: false,
         exp_category: false,
         video: false
     });
@@ -111,12 +113,13 @@ const AddYoursPg = () => {
         // Validation
         const newErrors = {
             age: data.age === 'Select',
+            email: data.email === "",
             exp_category: data.exp_category === 'Select',
             video: !video
         }
         setErrors(newErrors);
 
-        if (!newErrors.age && !newErrors.exp_category && !newErrors.video) {
+        if (!newErrors.age && !newErrors.email && !newErrors.exp_category && !newErrors.video) {
             // alert("Form submitted")
             console.log("Form submitted", data);
         }
@@ -124,6 +127,7 @@ const AddYoursPg = () => {
         //Inserting all the form data in a form data
         const formData = new FormData();
         formData.append("name", data.name)
+        formData.append("email",data.email)
         formData.append("video", video)
         formData.append("age", data.age)
         formData.append("profession", data.profession)
@@ -140,6 +144,7 @@ const AddYoursPg = () => {
         if (response.data.success) {
             setData({
                 name: "",
+                email:"",
                 age: "Select",
                 profession: "",
                 country: "",
@@ -161,6 +166,11 @@ const AddYoursPg = () => {
                 <div className="form-section">
                     <p>Name<span>*</span></p>
                     <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Enter Your Name' required />
+                </div>
+
+                <div className='form-section'>
+                    <p>Email<span>*</span></p>
+                    <input onChange={onChangeHandler}  value={data.email} type="email" name='email' placeholder='Your Registered Email Id' required />
                 </div>
 
                 <div className={`form-section ${errors.age ? 'error' : ''}`}>

@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias:{
-      '@add_yours' : path.resolve(__dirname,'../add_yours/src')
+      '@add_yours' : path.resolve(__dirname,'../add_yours/src'),
+      '@user_profile' : path.resolve(__dirname,'../add_yours/src')
     }
   }
 })

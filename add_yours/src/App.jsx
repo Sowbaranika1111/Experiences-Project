@@ -16,7 +16,7 @@ const App = () => {
       <Navbar />
       <div >
         <Routes>
-          <Route path="/" element={<UserProfile />} />
+          <Route path="/user-profile" element={<UserProfile />} />
           <Route path="/add-yours" element={<AddYoursPg />} />
           <Route path="/list" element={<MySharedExperience />} />
           <Route path="/write-exp" element={<WriteExperience />} />

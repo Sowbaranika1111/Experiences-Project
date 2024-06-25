@@ -21,6 +21,7 @@ const ExpDisplay = ({ exp_category }) => {
               key={index}
               id={item._id}
               name={item.name}
+              email={item.email}
               age = {item.age}
               profession={item.profession}
               country={item.country}

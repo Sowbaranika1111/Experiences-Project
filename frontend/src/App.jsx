@@ -4,10 +4,12 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import AddToFav from './pages/AddToFav/AddToFav'
 import AddYoursPg from '@add_yours/pages/AddYoursPage/AddYoursPg'
+import UserProfile from '@user_profile/components/UserProfile/UserProfile'
 import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false)
@@ -23,6 +25,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/fav' element={<AddToFav />} />
           <Route path='/add-yours' element={<AddYoursPg />} />
+          <Route path='/user-profile' element={<UserProfile />} />
         </Routes>
 
         <Link to='/add-yours'></Link>

@@ -8,6 +8,7 @@ const addExp = async(req,res) =>{
 
     const experiences = new expModel({
         name: req.body.name,
+        email: req.body.email,
         age: req.body.age,
         profession: req.body.profession,
         country: req.body.country,
