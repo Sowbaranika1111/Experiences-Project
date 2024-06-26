@@ -19,7 +19,7 @@ const App = () => {
           {/* <Route path="/user-profile/my-shared-exp" element={<MySharedExpDisplay />} /> */}
 
           <Route path="/add-yours/" element={<AddYoursPg />} />
-          <Route path="/write-exp" element={<WriteExperience />} />
+          <Route path="/write-exp/" element={<WriteExperience />} />
         </Routes>
       </div>
       {/* mounting the toast container */}

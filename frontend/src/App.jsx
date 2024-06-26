@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import WriteExperience from '../../add_yours/src/pages/WriteExperience/WriteExperience'
 
 const App = () => {
 
@@ -24,10 +25,13 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/fav' element={<AddToFav />} />
-          <Route path='/add-yours' element={<AddYoursPg />} />
           <Route path='/user-profile/*' element={<UserProfile />} />
+          <Route path='/add-yours' element={<AddYoursPg />} />
+          <Route path='/write-exp' element={<WriteExperience />} />
+
         </Routes>
 
+        <Link to='/write-exp'></Link>
         <Link to='/add-yours'></Link>
 
       </div>
