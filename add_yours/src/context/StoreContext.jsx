@@ -1,13 +1,16 @@
-import { createContext } from "react";
-import { exp_videos_list } from "../assets/assets.js";
-
-export const StoreContext = createContext(null)
+import  { createContext } from "react";
+import { exp_videos_list_1 } from '../assets/assets'
+ 
+export const StoreContext = createContext()
 
 const StoreContextProvider = (props) => {
 
+    // const [expVideosList,SetExpVideosList] = useState([])
+
     const contextValue = {
-        exp_videos_list
+        exp_videos_list_1 
     }
+
     return (
         <StoreContext.Provider value={contextValue}>
             {props.children}
@@ -15,3 +18,4 @@ const StoreContextProvider = (props) => {
     )
 
 }
+export default StoreContextProvider;

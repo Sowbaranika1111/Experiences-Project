@@ -25,7 +25,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/fav' element={<AddToFav />} />
           <Route path='/add-yours' element={<AddYoursPg />} />
-          <Route path='/user-profile' element={<UserProfile />} />
+          <Route path='/user-profile/*' element={<UserProfile />} />
         </Routes>
 
         <Link to='/add-yours'></Link>

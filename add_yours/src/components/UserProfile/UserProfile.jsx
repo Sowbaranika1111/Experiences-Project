@@ -5,7 +5,7 @@ import MySharedExpDisplay from '../MySharedExpDisplay/MySharedExpDisplay';
 
 const UserProfile = () => {
 
-    const[category,setCategory] = useState("All")
+    const[user_email,setUserEmail] = useState("All")
 
     return (
         <div className="user-profile">
@@ -18,13 +18,13 @@ const UserProfile = () => {
                 <h3>Let Your Tale Be An Inspiration!</h3>
             </NavLink>
 
-            <NavLink to='/user-profile/my-shared-exp' category={category} className="container my-experiences">
+            <NavLink to='my-shared-exp' className="container my-experiences">
                 <h3>My Experiences</h3>
             </NavLink>
 
 
             <Routes>
-                <Route path="my-shared-exp" element={<MySharedExpDisplay />} />
+                <Route path="my-shared-exp"  element={<MySharedExpDisplay user_email={user_email}/>} />
             </Routes>
 
             {/* <NavLink to='/list' className="container my-experiences">

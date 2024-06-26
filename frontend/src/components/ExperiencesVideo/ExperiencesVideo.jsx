@@ -5,7 +5,7 @@ import './ExperiencesVideo.css';
 import { StoreContext } from '../../context/StoreContext';
 import { assets } from '../../assets/assets';
 
-const ExperiencesVideo = ({ id, name, age, profession, country, meditating_experience, exp_category, exp_desc, video }) => {
+const ExperiencesVideo = ({ id, name, email , age, profession, country, meditating_experience, exp_category, exp_desc, video }) => {
 
     const { url, favVideos, addToFav, removeFromFav } = useContext(StoreContext)
 

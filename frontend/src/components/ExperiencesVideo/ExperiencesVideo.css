@@ -61,18 +61,18 @@
     color: #4a4a4a;
     font-size: 13px;
     line-height: 1.5;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.9s ease, padding 0.3s ease, font-size 0.3s ease; /* Added font-size transition */
     padding: 5px 0;
-    max-height: 3em;
-    /* Approximately two lines of text */
+    max-height: 2em;
     overflow: hidden;
     position: relative;
 }
 
 /* On hover, expand to show all text */
 .exp-video:hover .exp-video-desc {
-    max-height: 100px; /* Increase this if you expect longer text */
+    max-height: fit-content; 
     padding: 5px 0;
+    font-size: 12px;
 }
 
 .user-details {
@@ -80,7 +80,7 @@
     color: #8a2be2;
     margin-top: 10px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.9s ease;
 }
 
 .exp-video:hover .user-details {

@@ -1,0 +1,63 @@
+/* MyExpItem.css */
+
+.my-exp-item {
+    display: flex;
+    flex-direction: column; /* Stack items vertically by default */
+    width: 100%;
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Optional rounded corners */
+  }
+  
+  .my-exp-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .my-exp-item-video {
+    width: 100%; /* Take full width */
+  }
+  
+  .my-exp-item-content {
+    display: flex;
+    flex-direction: column; /* Stack details vertically */
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  /* Responsive Adjustments (optional) */
+  
+  @media (min-width: 768px) {
+    /* On larger screens, consider a side-by-side layout */
+    .my-exp-item {
+      flex-direction: row;
+    }
+  
+    .my-exp-item-video {
+      width: 50%;
+      flex: 0 0 50%;
+    }
+  
+    .my-exp-item-content {
+      width: 50%;
+      flex: 0 0 50%;
+    }
+  }
+  
+  /* Video Styles */
+  
+  .my-exp-item-video video {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Details Styles (you can customize these further) */
+  
+  .my-exp-item-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexible grid layout for details */
+    gap: 1rem;
+  }
+  
