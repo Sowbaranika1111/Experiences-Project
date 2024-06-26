@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
 import { NavLink,Route,Routes } from 'react-router-dom';
-import MySharedExpDisplay from '../MySharedExpDisplay/MySharedExpDisplay';
+// import MySharedExpDisplay from '../MySharedExpDisplay/MySharedExpDisplay';
 
 const UserProfile = () => {
 
@@ -23,9 +23,9 @@ const UserProfile = () => {
             </NavLink>
 
 
-            <Routes>
+            {/* <Routes>
                 <Route path="my-shared-exp"  element={<MySharedExpDisplay user_email={user_email}/>} />
-            </Routes>
+            </Routes> */}
 
             {/* <NavLink to='/list' className="container my-experiences">
                 <h3>My Experiences</h3>
