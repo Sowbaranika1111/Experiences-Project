@@ -13,7 +13,7 @@
 }
 
 .explore-exp h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 10px;
     color: #6a5beb;
     font-weight: 500;
@@ -29,6 +29,7 @@
 
 .explore-exp-text {
     max-width: 100%;
+    font-size: larger;
 }
 
 .explore-exp-list {
@@ -68,9 +69,8 @@
 }
 
 .explore-exp hr {
-    margin: 10px 0px;
     height: 2px;
-    background-color: #e2e2e2;
+    background-color: #ffffff;
     border: none;
 }
 
@@ -84,7 +84,7 @@
 @media (max-width: 1050px) {
     .explore-exp-text {
         max-width: 100%;
-        font-size: 14px;
+        font-size: large;
     }
 
     .explore-exp h1 {
@@ -134,6 +134,10 @@
     .explore-exp {
         margin-left: 20px;
     }
+    .explore-exp-text {
+        max-width: 100%;
+        font-size: large;
+    }
 
     .explore-exp-list p {
         font-size: 12px;
@@ -161,8 +165,8 @@
     }
 
     .explore-exp-list-item img {
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
     }
 
     .explore-exp-text {
@@ -178,31 +182,34 @@
 
 @media (max-width: 400px) {
     .explore-exp {
-        margin-left: 10px;
+        margin-left: 0px;
     }
 
     .explore-exp-header {
         flex-direction: column;
         gap: 10px;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .explore-exp h1 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .tell-your-tale-video {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
     }
 
     .explore-exp-list-item img {
-        height: 50px;
-        width: 50px;
+        height: 70px;
+        width: 70px;
     }
 
     .explore-exp-text {
-        font-size: 12px;
+        font-size: 1rem;
     }
 
     .explore-exp-list p {

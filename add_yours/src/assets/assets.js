@@ -7,11 +7,18 @@ import video_5 from './mp4_forest_fog_clouds.mp4'
 import video_7 from './mp4_honey_bee.mp4'
 
 import profile_icon from './profile_icon.png'
+import blueUniverse_bg from './blueUniverse_bg.jpg'
+import purpleUniverse_bg from './purpleUniverse_bg.jpg'
+import greenUniverse_bg from './greenUniverse_bg.jpg'
 
 export const assets = {
     uploadVideo,
     recordVideo,
-    profile_icon
+    profile_icon,
+
+    blueUniverse_bg,
+    purpleUniverse_bg,
+    greenUniverse_bg
 }
 
 export const exp_videos_list_1 = [

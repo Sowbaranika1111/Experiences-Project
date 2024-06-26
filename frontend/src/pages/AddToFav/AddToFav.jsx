@@ -1,29 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './AddToFav.css';
 import { StoreContext } from '../../context/StoreContext';
 
 const AddToFav = () => {
   const { url, favVideos, exp_videos_list, removeFromFav } = useContext(StoreContext);
+  const [expanded, setExpanded] = useState({});
+
+  const toggleExpand = (id) => {
+    setExpanded(prevState => ({
+      ...prevState,
+      [id]: !prevState[id]
+    }));
+  };
 
   return (
     <div className="fav-grid">
-      {exp_videos_list.map((item, index) => {
+      {exp_videos_list.map((item) => {
         if (favVideos[item._id]) {
           return (
             <div key={item._id} className="fav-item">
               <div className="fav-video-container">
                 <video className="fav-video" controls>
-                  <source src={`${url}/uploads/${item.video_file}`} type="video/mp4" />
+                <source src={url + "/videos/" + item.video} type={"video/mp4" || 'video/webm'} />   
                   Your browser does not support the video tag.
                 </video>
               </div>
               <div className="fav-details">
-                <h3 className="fav-name">{item.name}</h3>
-                <p className="fav-profession">{item.profession}</p>
+                <p className="fav-name">{item.name}</p>
                 <p className="fav-category">{item.exp_category}</p>
-                <p className="fav-description">{item.exp_desc}</p>
-                <p className="fav-location">{item.country}</p>
-                <p className="fav-experience">Meditating For {item.meditating_experience}</p>
+                <button className="fav-toggle" onClick={() => toggleExpand(item._id)}>
+                  {expanded[item._id] ? 'Show Less' : 'Show More'}
+                </button>
+                {expanded[item._id] && (
+                  <div className="fav-extra-details">
+                    <p className="fav-profession">{item.profession}</p>
+                    <p className="fav-description">{item.exp_desc}</p>
+                    <p className="fav-location">{item.country}</p>
+                    <p className="fav-experience">Meditating For {item.meditating_experience}</p>
+                  </div>
+                )}
               </div>
               <button className="fav-remove" onClick={() => removeFromFav(item._id)}>X</button>
             </div>
@@ -33,9 +48,49 @@ const AddToFav = () => {
       })}
     </div>
   );
-}
+};
 
 export default AddToFav;
+
+
+// import React, { useContext } from 'react';
+// import './AddToFav.css';
+// import { StoreContext } from '../../context/StoreContext';
+
+// const AddToFav = () => {
+//   const { url, favVideos, exp_videos_list, removeFromFav } = useContext(StoreContext);
+
+//   return (
+//     <div className="fav-grid">
+//       {exp_videos_list.map((item, index) => {
+//         if (favVideos[item._id]) {
+//           return (
+//             <div key={item._id} className="fav-item">
+//               <div className="fav-video-container">
+//                 <video className="fav-video" controls>
+//                   <source src={url + "/videos/" + item.video} type={"video/mp4" || 'video/webm'} />                
+//                     Your browser does not support the video tag.
+//                 </video>
+//               </div>
+//               <div className="fav-details">
+//                 <p className="fav-category">{item.exp_category}</p>
+//                 <p className="fav-name">{item.name}</p>
+//                 <p className="fav-profession">{item.profession}</p>
+//                 <p className="fav-description">{item.exp_desc}</p>
+//                 <p className="fav-location">{item.country}</p>
+//                 <p className="fav-experience">Meditating For {item.meditating_experience}</p>
+//               </div>
+//               <button className="fav-remove" onClick={() => removeFromFav(item._id)}>X</button>
+//             </div>
+//           );
+//         }
+//         return null;
+//       })}
+//     </div>
+//   );
+// }
+
+// export default AddToFav;
 
 // it,s working
 // import React, { useContext } from 'react';

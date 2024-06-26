@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
-import { NavLink,Route,Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
+import { assets } from '../../assets/assets';
+
 // import MySharedExpDisplay from '../MySharedExpDisplay/MySharedExpDisplay';
 
 const UserProfile = () => {
 
-    const[user_email,setUserEmail] = useState("All")
+    const [user_email, setUserEmail] = useState("All")
 
     return (
         <div className="user-profile">
 
             <NavLink to='/write-exp' className="container everyday-exp">
-                <h3>How Was Your Conscious Breath Journey Today?</h3>
+                <img src={assets.blueUniverse_bg} alt="" />
+                <p>How Was Your Conscious Breath Journey Today?</p>
             </NavLink>
 
             <NavLink to='/add-yours' className="container add-yours-pg">
-                <h3>Let Your Tale Be An Inspiration!</h3>
+                <img src={assets.purpleUniverse_bg} alt="" />
+                <p>Let Your Tale Be An Inspiration!</p>
             </NavLink>
 
             <NavLink to='my-shared-exp' className="container my-experiences">
-                <h3>My Experiences</h3>
+                <img src={assets.greenUniverse_bg} alt="" />
+                <p>My Experiences</p>
             </NavLink>
 
 
@@ -28,7 +33,7 @@ const UserProfile = () => {
             </Routes> */}
 
             {/* <NavLink to='/list' className="container my-experiences">
-                <h3>My Experiences</h3>
+                <p>My Experiences</p>
             </NavLink> */}
         </div >
     );

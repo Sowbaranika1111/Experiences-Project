@@ -1,18 +1,85 @@
-.exp-display{
+.exp-display {
     margin-top: 30px;
     margin-left: 35px;
 }
-.exp-display h2{
-    font-size: max(3vw,24px);
+
+.exp-display h2 {
+    font-size: max(3vw, 24px);
     font-weight: 500;
     color: #6a5beb;
 }
 
-.exp-display-list{
+/* Responsive grid display */
+.exp-display-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 10px;
     gap: 10px;
-    row-gap : 10px;
+    row-gap: 10px;
     column-gap: 15px;
+}
+
+/* Adjustments for different screen sizes */
+@media (max-width: 1200px) {
+    .exp-display {
+        margin-left: 25px;
+    }
+
+    .exp-display-list {
+        gap: 8px;
+        row-gap: 8px;
+        column-gap: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .exp-display {
+        margin-left: 15px;
+    }
+
+    .exp-display h2 {
+        font-size: max(4vw, 20px);
+    }
+
+    .exp-display-list {
+        gap: 6px;
+        row-gap: 6px;
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .exp-display {
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .exp-display h2 {
+        font-size: max(5vw, 18px);
+    }
+
+    .exp-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 5px;
+        row-gap: 5px;
+        column-gap: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .exp-display {
+        margin-left: 5px;
+        margin-top: 15px;
+    }
+
+    .exp-display h2 {
+        font-size: max(6vw, 16px);
+    }
+
+    .exp-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 4px;
+        row-gap: 4px;
+        column-gap: 6px;
+    }
 }

@@ -1,5 +1,25 @@
+.exp-display {
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+.exp-display h2 {
+    font-size: max(3vw, 24px);
+    font-weight: 500;
+    color: #6a5beb;
+}
+
+.exp-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 10px;
+    gap: 10px;
+    row-gap: 10px;
+    column-gap: 15px;
+}
+
 .exp-video {
-    width: 80%;
+    width: 100%;
     max-width: 800px;
     margin: 20px auto;
     border-radius: 15px;
@@ -61,7 +81,8 @@
     color: #4a4a4a;
     font-size: 13px;
     line-height: 1.5;
-    transition: max-height 0.9s ease, padding 0.3s ease, font-size 0.3s ease; /* Added font-size transition */
+    transition: max-height 0.9s ease, padding 0.3s ease, font-size 0.3s ease;
+    /* Added font-size transition */
     padding: 5px 0;
     max-height: 2em;
     overflow: hidden;
@@ -70,21 +91,26 @@
 
 /* On hover, expand to show all text */
 .exp-video:hover .exp-video-desc {
-    max-height: fit-content; 
+    max-height: fit-content;
     padding: 5px 0;
     font-size: 12px;
 }
 
+/* Initial state with no height */
 .user-details {
     font-size: 12px;
     color: #8a2be2;
-    margin-top: 10px;
+    margin-top: 0;
+    max-height: 0;
     opacity: 0;
-    transition: opacity 0.9s ease;
+    transition: max-height 0.9s ease, opacity 0.9s ease, margin-top 0.3s ease;
 }
 
+/* On hover, show the details */
 .exp-video:hover .user-details {
+    max-height: 100px;
     opacity: 1;
+    margin-top: 10px;
 }
 
 .add-to-fav,
@@ -120,19 +146,56 @@
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
+    .exp-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
     .exp-video {
         width: 100%;
     }
 }
 
 @media (max-width: 768px) {
+    .exp-display-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
     .exp-video {
         width: 100%;
     }
+
+    .user-details {
+        font-size: 11px;
+        margin-top: 5px;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
+    .exp-display-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .exp-video {
-        width: 80%;
+        width: 100%;
+    }
+
+    .user-details {
+        font-size: 11px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 450px) {
+    .exp-display-list {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-video {
+        width: 100%;
+    }
+
+    .user-details {
+        font-size: 10px;
+        margin-top: 3px;
     }
 }

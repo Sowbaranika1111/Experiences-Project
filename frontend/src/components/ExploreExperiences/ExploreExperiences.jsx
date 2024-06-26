@@ -13,7 +13,7 @@ const ExploreExperiences = ({ exp_category, setexp_category}) => {
         </video>
         </Link>
       </div>
-      <p className='explore-exp-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt tempore esse, vitae nemo assumenda et mollitia tenetur vero fugiat explicabo ipsum repudiandae rem.</p>
+      <p className='explore-exp-text'> <i> Experiment To Experience , Experience To Feel The Joy Of The Soul , Because Night Will Be Fake If There Is No Joy!</i></p>
       <div className="explore-exp-list">
         {experiences_list.map((item, index) => {
           return (

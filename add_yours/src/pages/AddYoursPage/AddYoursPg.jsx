@@ -10,7 +10,7 @@ const AddYoursPg = () => {
 
     const [data, setData] = useState({
         name: "",
-        email:"",
+        email: "",
         age: "Select",
         profession: "",
         country: "",
@@ -127,7 +127,7 @@ const AddYoursPg = () => {
         //Inserting all the form data in a form data
         const formData = new FormData();
         formData.append("name", data.name)
-        formData.append("email",data.email)
+        formData.append("email", data.email)
         formData.append("video", video)
         formData.append("age", data.age)
         formData.append("profession", data.profession)
@@ -144,7 +144,7 @@ const AddYoursPg = () => {
         if (response.data.success) {
             setData({
                 name: "",
-                email:"",
+                email: "",
                 age: "Select",
                 profession: "",
                 country: "",
@@ -160,115 +160,122 @@ const AddYoursPg = () => {
     }
 
     return (
-        <div className='add'>
-            <form className='flex-col' onSubmit={onSubmitHandler}>
+        <div className="container-add-yours">
+            <div className="left-half"></div>
 
-                <div className="form-section">
-                    <p>Name<span>*</span></p>
-                    <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Enter Your Name' required />
-                </div>
+            <div className="right-half">
+                <div className='add'>
+                    <form className='flex-col' onSubmit={onSubmitHandler}>
 
-                <div className='form-section'>
-                    <p>Email<span>*</span></p>
-                    <input onChange={onChangeHandler}  value={data.email} type="email" name='email' placeholder='Your Registered Email Id' required />
-                </div>
+                        <div className="form-section">
+                            <p>Name<span>*</span></p>
+                            <input onChange={onChangeHandler} value={data.name} type="text" name='name' placeholder='Enter Your Name' required />
+                        </div>
 
-                <div className={`form-section ${errors.age ? 'error' : ''}`}>
-                    <p>Age<span>*</span></p>
-                    <select onChange={onChangeHandler} name="age" required>
-                        <option value="Select">Select</option>
-                        <option value="0_to_10">0-10</option>
-                        <option value="11_to_20">11-20</option>
-                        <option value="21_to_30">21-30</option>
-                        <option value="31_to_50">31-50</option>
-                        <option value="51_to_70">51-70</option>
-                        <option value="greater_than_70">above 70</option>
-                    </select>
-                    {errors.age && <span className='error-message'>Please select an age range.</span>}
-                </div>
+                        <div className='form-section'>
+                            <p>Email<span>*</span></p>
+                            <input onChange={onChangeHandler} value={data.email} type="email" name='email' placeholder='Your Registered Email Id' required />
+                        </div>
 
-                <div className="form-section">
-                    <p>Profession<span>*</span></p>
-                    <input onChange={onChangeHandler} value={data.profession} type="text" name='profession' placeholder='Enter Your Profession' required />
-                </div>
+                        <div className={`form-section ${errors.age ? 'error' : ''}`}>
+                            <p>Age<span>*</span></p>
+                            <select onChange={onChangeHandler} name="age" required>
+                                <option value="Select">Select</option>
+                                <option value="0_to_10">0-10</option>
+                                <option value="11_to_20">11-20</option>
+                                <option value="21_to_30">21-30</option>
+                                <option value="31_to_50">31-50</option>
+                                <option value="51_to_70">51-70</option>
+                                <option value="greater_than_70">above 70</option>
+                            </select>
+                            {errors.age && <span className='error-message'>Please select an age range.</span>}
+                        </div>
 
-                <div className="form-section">
-                    <p>Country<span>*</span></p>
-                    <input onChange={onChangeHandler} value={data.country} type="text" name='country' placeholder='Enter Your Country Name' required />
-                </div>
+                        <div className="form-section">
+                            <p>Profession<span>*</span></p>
+                            <input onChange={onChangeHandler} value={data.profession} type="text" name='profession' placeholder='Enter Your Profession' required />
+                        </div>
 
-                <div className="form-section">
-                    <p>Meditating Experience<span>*</span></p>
-                    <input onChange={onChangeHandler} value={data.meditating_experience} type="text" name="meditating_experience" placeholder='Eg: 2.3 years or 6 months' required />
-                </div>
+                        <div className="form-section">
+                            <p>Country<span>*</span></p>
+                            <input onChange={onChangeHandler} value={data.country} type="text" name='country' placeholder='Enter Your Country Name' required />
+                        </div>
 
-                <div className={`form-section ${errors.exp_category ? 'error' : ''}`}>
-                    <p>Experience's Category<span>*</span></p>
-                    <select onChange={onChangeHandler} name="exp_category" required>
-                        <option value="Select">Select</option>
-                        <option value="Mental Health">Mental Health</option>
-                        <option value="Physical Health">Physical Health</option>
-                        <option value="Manifestations">Manifestations</option>
-                        <option value="Miracles">Miracles</option>
-                        <option value="Healing">Healing</option>
-                        <option value="Visions">Visions</option>
-                        <option value="Messages received">Messages Received</option>
-                        <option value="Astral Travel">Astral Travel</option>
-                        <option value="Other Experiences">Other Experiences</option>
-                    </select>
-                    {errors.exp_category && <span className='error-message'>Please select a category.</span>}
-                </div>
+                        <div className="form-section">
+                            <p>Meditating Experience<span>*</span></p>
+                            <input onChange={onChangeHandler} value={data.meditating_experience} type="text" name="meditating_experience" placeholder='Eg: 2.3 years or 6 months' required />
+                        </div>
 
-                <div className="form-section vdo-upload-section">
-                    <p>Video<span>*</span></p>
-                    <div className="vdo-upload">
-                        {video ? (
-                            <video width="50%" controls>
-                                <source src={URL.createObjectURL(video)} type={video.type || 'video/webm'} />
-                                {/* <source src={`/uploads/${video}`} type="video/webm" /> */}
-                                Your browser does not support the video tag.
-                            </video>
-                        ) : (
-                            <>
-                                <div className="vdo-input-options">
-                                    <label htmlFor="uploadVideo">
-                                        <img src={assets.uploadVideo} alt="Upload Video" />
-                                    </label>
-                                    <p>or</p>
-                                    <button type="button" onClick={startRecording}>
-                                        <img src={assets.recordVideo} alt="Record Video" />
-                                    </button>
-                                </div>
-                            </>
-                        )}
-                        <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden />
-                        {recording && (
-                            <div className="modal">
-                                <div className='modal-content'>
-                                    <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
-                                    <button type='button' onClick={stopRecording}>Stop Recording</button>
+                        <div className={`form-section ${errors.exp_category ? 'error' : ''}`}>
+                            <p>Experience's Category<span>*</span></p>
+                            <select onChange={onChangeHandler} name="exp_category" required>
+                                <option value="Select">Select</option>
+                                <option value="Mental Health">Mental Health</option>
+                                <option value="Physical Health">Physical Health</option>
+                                <option value="Manifestations">Manifestations</option>
+                                <option value="Miracles">Miracles</option>
+                                <option value="Healing">Healing</option>
+                                <option value="Visions">Visions</option>
+                                <option value="Messages received">Messages Received</option>
+                                <option value="Astral Travel">Astral Travel</option>
+                                <option value="Other Experiences">Other Experiences</option>
+                            </select>
+                            {errors.exp_category && <span className='error-message'>Please select a category.</span>}
+                        </div>
+
+                        <div className="form-section vdo-upload-section">
+                            <p>Video<span>*</span></p>
+                            <div className="vdo-upload">
+                                {video ? (
+                                    <video width="50%" controls>
+                                        <source src={URL.createObjectURL(video)} type={video.type || 'video/webm'} />
+                                        {/* <source src={`/uploads/${video}`} type="video/webm" /> */}
+                                        Your browser does not support the video tag.
+                                    </video>
+                                ) : (
+                                    <>
+                                        <div className="vdo-input-options">
+                                            <label htmlFor="uploadVideo">
+                                                <img src={assets.uploadVideo} alt="Upload Video" />
+                                            </label>
+                                            <p>or</p>
+                                            <button type="button" onClick={startRecording}>
+                                                <img src={assets.recordVideo} alt="Record Video" />
+                                            </button>
+                                        </div>
+                                    </>
+                                )}
+                                <input onChange={handleVideoUpload} type="file" id="uploadVideo" accept="video/*" hidden />
+                                {recording && (
+                                    <div className="modal">
+                                        <div className='modal-content'>
+                                            <video ref={videoRef} width="50%" autoPlay playsInline style={{ display: 'block' }} />
+                                            <button type='button' onClick={stopRecording}>Stop Recording</button>
+                                        </div>
+                                    </div>
+                                )}
+                                {errors.video && <span className=''>Please upload or record a video.</span>}
+                            </div>
+                        </div>
+
+                        <div className="form-section">
+                            <div className="description-header">
+                                <p>Experience's Description<span>*</span></p>
+                                <div className="words-count">
+                                    {chars_remaining}/{maxChars}
                                 </div>
                             </div>
-                        )}
-                        {errors.video && <span className=''>Please upload or record a video.</span>}
-                    </div>
-                </div>
-
-                <div className="form-section">
-                    <div className="description-header">
-                        <p>Experience's Description<span>*</span></p>
-                        <div className="words-count">
-                            {chars_remaining}/{maxChars}
+                            <textarea onChange={onChangeHandler} value={data.exp_desc} name="exp_desc" rows="6" placeholder='Few lines about your experience...' required></textarea>
                         </div>
-                    </div>
-                    <textarea onChange={onChangeHandler} value={data.exp_desc} name="exp_desc" rows="6" placeholder='Few lines about your experience...' required></textarea>
-                </div>
 
-                <div className="button-container">
-                    <button type='submit' className='add-btn'>ADD</button>
+                        <div className="button-container">
+                            <button type='submit' className='add-btn'>ADD</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
+
     )
 }
 
