@@ -1,14 +1,20 @@
-import  { createContext } from "react";
-import { exp_videos_list_1 } from '../assets/assets'
- 
+import { createContext, useState } from "react";
+// import { exp_videos_list_1 } from '../assets/assets'
+
 export const StoreContext = createContext()
 
 const StoreContextProvider = (props) => {
 
-    // const [expVideosList,SetExpVideosList] = useState([])
+    const [writeExpItems, setWriteExpItems] = useState({})
 
-    const contextValue = {
-        exp_videos_list_1 
+    const saveWriteExp = (writeExpId) => {
+        if (!writeExpItems[writeExpId]) {
+            <p> Start noting your experiences </p>
+            setWriteExpItems((prev)=>({...prev,[expId]:1}))
+        }
+        else{
+            
+        }
     }
 
     return (
