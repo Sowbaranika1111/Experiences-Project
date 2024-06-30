@@ -18,6 +18,8 @@ const addExp = async (req, res) => {
         video: video_filename
     })
     try {
+        // throw new error("Simulated DB error") // to chk if the file is retained in the uploads
+
         const saveExpToDB = await experiences.save(); //this mthd isused to save data in the db
 
         if (saveExpToDB) {
@@ -37,7 +39,8 @@ const addExp = async (req, res) => {
         }
     }
     catch (error) {
-        console.error("error in addExp of expController.js: ".error.message);
+        console.error("Error in addExp of expController.js: ",error.message);
+        console.error("Full error object:", error);
         res.status(500).json({
             success: false,
             message: "Error saving experience to database. Video file is preserved in uploads folder.",

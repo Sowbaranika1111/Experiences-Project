@@ -32,7 +32,7 @@ const handleMulterError = (err, req, res, next) => {
     next();
 }
 
-expRouter.post("/add", upload.single("video"), handleMulterError, addExp)
+expRouter.post("/add", upload.single("video"), handleMulterError, addExp) 
 
 // to display
 expRouter.get("/list", listExp)

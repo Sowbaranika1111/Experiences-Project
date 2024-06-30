@@ -119,10 +119,10 @@ const AddYoursPg = () => {
         }
         setErrors(newErrors);
 
-        if (!newErrors.age && !newErrors.email && !newErrors.exp_category && !newErrors.video) {
+        // if (!newErrors.age && !newErrors.email && !newErrors.exp_category && !newErrors.video) {
             // alert("Form submitted")
-            console.log("Form submitted", data);
-        }
+        //     console.log("Form submitted", data);
+        // }
 
         //Inserting all the form data in a form data
         const formData = new FormData();
