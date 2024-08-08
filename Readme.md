@@ -19,14 +19,14 @@ Favorites: Users can save their favorite experiences on a dedicated "Favorites" 
 
 ## Screenshots
 
-**Sign up**
-![Signup](https://github.com/Sowbarnika111/Experiences-Project/blob/main/ideas%20Images/1_signup.png)
+**_Sign up_**
+![Signup](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/1_signup.png)
 
-**Login**
-![Login](https://github.com/Sowbarnika111/Experiences-Project/blob/main/ideas%20Images/2_login.png)
+**_Login_**
+![Login](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/2_login.png)
 
-**Home Page**
-![Home Page](https://github.com/Sowbarnika111/Experiences-Project/blob/main/ideas%20Images/3_homePg.png)
+**_Home Page_**
+![Home Page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/3_homePg.png)
 
 **_List of categories_**
 ![List of categories](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/4_categories.png)
