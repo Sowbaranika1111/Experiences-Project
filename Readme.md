@@ -10,12 +10,13 @@
 
 ## Key Features
 
-**Video Capturing and Uploading:** Users can capture a video through their mobile camera or upload one from their gallery.
-**Experience Categories:** Users can select the category of their experience from a list of options.
-On clicking the categories , the experiences of that catogory are listed out.
-**Experience Description:** Users can provide a description of their experience in a few lines.
-**Recent Experiences:** The most recent experiences shared are displayed on the front page.
-Favorites: Users can save their favorite experiences on a dedicated "Favorites" page.
+- **Video Capturing and Uploading:** Users can capture a video through their mobile camera or upload one from their gallery.
+- **Experience Categories:**
+  - Users can select the category of their experience from a list of options.
+  - On clicking the categories , the experiences of that catogory are listed out.
+- **Experience Description:** Users can provide a description of their experience in a few lines.
+- **Recent Experiences:** The most recent experiences shared are displayed on the front page.
+- **Favorites**: Users can save their favorite experiences on a dedicated "Favorites" page.
 
 ## Screenshots
 
@@ -47,4 +48,16 @@ Favorites: Users can save their favorite experiences on a dedicated "Favorites" 
 ![Favourites Page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/9_favourites_page.png)
 
 **_Footer_**
-![Home Page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/10_footer.png)
+![Footer](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/10_footer.png)
+
+**_Responsive-User-Profile_**
+![Responsive_page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/15_responsive_4.png)
+
+**_Responsive-1_**
+![Responsive_page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/12_responsive_1.png)
+
+**_Responsive-2_**
+![Responsive_page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/13_responsive_2.png)
+
+**_Responsive-3_**
+![Responsive_page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/14_responsive_3.png)
