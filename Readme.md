@@ -47,6 +47,9 @@
 **_Favourites Page_**
 ![Favourites Page](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/9_favourites_page.png)
 
+**_User Profile_**
+![User Profile](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/17_user_profile.png)
+
 **_Footer_**
 ![Footer](https://github.com/Sowbaranika1111/Experiences-Project/blob/main/ideas_Images/10_footer.png)
 
